@@ -35,264 +35,45 @@ $('.custom-select').fancySelect();
 // ------------------------------------------------------------
 
 (function() {
-	if($('#map_canvas')[0]) {
+	if($('#map')[0]) {
 	  var style = [
-		{
-			"featureType": "landscape.natural",
-			"stylers": [
-				{
-					"saturation": -100
-				},
-				{
-					"lightness": 100
-				}
-			]
-		},
-		{
-			"featureType": "transit.station",
-			"elementType": "geometry.stroke",
-			"stylers": [
-				{
-					"color": "#ffc35e"
-				}
-			]
-		},
-		{
-			"featureType": "water",
-			"stylers": [
-				{
-					"saturation": -100
-				},
-				{
-					"lightness": 100
-				}
-			]
-		},
-		{
-			"elementType": "labels.text.stroke",
-			"stylers": [
-				{
-					"saturation": -100
-				},
-				{
-					"lightness": 100
-				}
-			]
-		},
-		{
-			"featureType": "road",
-			"elementType": "geometry.stroke",
-			"stylers": [
-				{
-					"saturation": -100
-				},
-				{
-					"lightness": -75
-				}
-			]
-		},
-		{
-			"featureType": "road",
-			"elementType": "geometry.fill",
-			"stylers": [
-				{
-					"saturation": -100
-				},
-				{
-					"lightness": 97
-				}
-			]
-		},
-		{
-			"featureType": "poi.park",
-			"stylers": [
-				{
-					"saturation": -100
-				},
-				{
-					"lightness": -100
-				}
-			]
-		},
-		{
-			"featureType": "poi.park",
-			"elementType": "labels.text.fill",
-			"stylers": [
-				{
-					"saturation": -100
-				},
-				{
-					"lightness": 100
-				}
-			]
-		},
-		{
-			"featureType": "road",
-			"elementType": "labels",
-			"stylers": [
-				{
-					"visibility": "on"
-				}
-			]
-		},
-		{
-			"featureType": "landscape.man_made",
-			"stylers": [
-				{
-					"saturation": -100
-				},
-				{
-					"lightness": 100
-				}
-			]
-		},
-		{
-			"featureType": "administrative",
-			"elementType": "labels.text.fill",
-			"stylers": [
-				{
-					"saturation": -100
-				},
-				{
-					"lightness": 100
-				}
-			]
-		},
-		{
-			"featureType": "administrative",
-			"elementType": "labels.text.stroke",
-			"stylers": [
-				{
-					"saturation": -100
-				},
-				{
-					"lightness": -100
-				}
-			]
-		},
-		{
-			"featureType": "poi",
-			"stylers": [
-				{
-					"saturation": -100
-				},
-				{
-					"lightness": 100
-				}
-			]
-		},
-		{
-			"featureType": "poi",
-			"elementType": "labels.text.fill",
-			"stylers": [
-				{
-					"saturation": -100
-				},
-				{
-					"lightness": -100
-				}
-			]
-		},
-		{
-			"featureType": "transit.station",
-			"stylers": [
-				{
-					"saturation": -100
-				},
-				{
-					"lightness": -22
-				}
-			]
-		},
-		{
-			"elementType": "labels.text.fill",
-			"stylers": [
-				{
-					"saturation": 1
-				},
-				{
-					"lightness": -100
-				}
-			]
-		},
-		{
-			"elementType": "labels.text.stroke",
-			"stylers": [
-				{
-					"saturation": -100
-				},
-				{
-					"lightness": 100
-				}
-			]
-		},
-		{
-			"featureType": "administrative",
-			"elementType": "geometry.stroke",
-			"stylers": [
-				{
-					"color": "#e30513"
-				},
-				{
-					"lightness": 14
-				},
-				{
-					"weight": 1.4
-				}
-			]
-		},
-		{
-			"featureType": "poi",
-			"elementType": "geometry.stroke",
-			"stylers": [
-			  {
-				  "color": "#e30513"
-			  },
-			  {
-				  "lightness": 14
-			  },
-			  {
-				  "weight": 1.4
-			  }
-			]
-		},
-		{
-			"featureType": "administrative.locality",
-			"elementType": "labels",
-			"stylers": [
-				{
-					"visibility": "off"
-				}
-			]
-		},
-		{
-			"featureType": "water",
-			"elementType": "labels",
-			"stylers": [
-				{
-					"visibility": "off"
-				}
-			]
-		},
-		{
-			"featureType": "administrative.locality",
-			"elementType": "labels",
-			"stylers": [
-				{
-					"visibility": "on"
-				}
-			]
-		},
-		{
-			"featureType": "water",
-			"elementType": "labels",
-			"stylers": [
-				{
-					"visibility": "on"
-				}
-			]
-		}
-	];
+	    {
+	        "stylers": [
+	            {
+	                "visibility": "simplified"
+	            }
+	        ]
+	    },
+	    {
+	        "stylers": [
+	            {
+	                "color": "#131314"
+	            }
+	        ]
+	    },
+	    {
+	        "featureType": "water",
+	        "stylers": [
+	            {
+	                "color": "#131313"
+	            },
+	            {
+	                "lightness": 7
+	            }
+	        ]
+	    },
+	    {
+	        "elementType": "labels.text.fill",
+	        "stylers": [
+	            {
+	                "visibility": "on"
+	            },
+	            {
+	                "lightness": 25
+	            }
+	        ]
+	    }
+	]
 
 	// Init the Map 
 	var map = new google.maps.Map(document.getElementById('map_canvas'), {
