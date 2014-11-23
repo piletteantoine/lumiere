@@ -27,7 +27,7 @@ var _window = $(window),
 // FancySelect
 // ------------------------------------------------------------
 
-$('.custom-select').fancySelect();
+// $('.custom-select').fancySelect();
 
 
 // ------------------------------------------------------------
@@ -76,7 +76,7 @@ $('.custom-select').fancySelect();
 	]
 
 	// Init the Map 
-	var map = new google.maps.Map(document.getElementById('map_canvas'), {
+	var map = new google.maps.Map(document.getElementById('map'), {
 	  zoom: 12,
 	  // center: new google.maps.LatLng(10, 10),
 	  center:  new google.maps.LatLng(51.48184, 7.21624),

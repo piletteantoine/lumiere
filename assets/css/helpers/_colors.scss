@@ -1,0 +1,43 @@
+// ------------------------------------------------------------
+// Colors
+// ------------------------------------------------------------
+
+/*
+ * Greys (dark to light) */
+
+$dark_black				: #000000;
+$black					: #222222;
+
+$grey					: #4d4d4d;
+$dark_grey				: #808080;
+$light_grey				: #f6f6f6;
+$hot_grey				: #bfbfbf; 
+$info_grey				: #dbdad7;
+
+$white					: #ffffff;
+
+/*
+ * Main brand colors */
+
+$ruhr-red				: #ed1d24;
+$ruhr-grey				: #d2d2cd;
+$ruhr-alternative-grey	: #a8a59e;
+
+/*
+ * UI colors */
+
+$red					: #dc0336; // deprecated
+$pink					: #fcd5cd; // deprecated
+$blue					: #9ec5dd; // deprecated
+
+
+// ------------------------------------------------------------
+// Generic names
+// ------------------------------------------------------------
+
+$text_color				: $black;
+$light_text				: $info_grey;
+
+$brand_color_primary	: $ruhr-red;
+$brand_color_secondary	: $ruhr-grey;
+$brand_color_tertiary	: $ruhr-alternative-grey;
