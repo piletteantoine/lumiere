@@ -1,0 +1,34 @@
+.map{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: $fs*6.5;
+	width: 100%;
+	height: 100%;
+}
+
+.map .gm-style-mtc{
+	display: none;
+}
+
+.stations, .stations svg {
+  position: absolute;
+}
+
+.stations svg {
+  @extend %RealText-Regular;
+  font: 15px;
+  color: #000000;
+}
+
+.stations circle {
+  fill: #ffffff;
+  // stroke: rgba(255,255,255,0.1);
+  stroke: $white;
+  stroke-width: 10px;
+  cursor: pointer;
+}
+
+.stations text { fill: #000000; }

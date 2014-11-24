@@ -1,0 +1,16 @@
+// ------------------------------------------------------------
+// Z-index stack
+// ------------------------------------------------------------
+
+$z-overlay-before			: 100;
+$z-overlay-after			: 200;
+$z-nav-before				: 90;
+$z-nav-menu					: 9000; // The main navigation (header)
+$z-search-bar				: 9000; // The search bar
+$z-modal					: 8000;
+$z-body-overlay				: 7000;
+$z-additional-nav			: 50; // The additional navigation
+$z-sidebar-dismiss			: 50; // The "dimiss" button for the sidebar (map)
+$z-sidebar-main				: 40; // The main content of the sidebar (map)
+$z-map-sidebar				: 30; // The sidebar for the map
+$z-map-ui					: 20; // The UI components for the map

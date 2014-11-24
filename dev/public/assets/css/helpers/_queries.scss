@@ -1,0 +1,50 @@
+// ------------------------------------------------------------
+// Media Queries
+// ------------------------------------------------------------
+
+// Somes breakpoint
+$xs-screen 				: 480px;
+$s-screen 				: 780px;
+$m-screen 				: 1024px;
+$nav-breakpoint			: 1100px;
+$l-screen 				: 1280px;
+$xl-screen 				: 1800px;
+$short-screen-height 	: 900px;
+$phone-screen-height 	: 480px;
+
+@mixin respond-to($media) {
+	@if $media == x-small-screens {
+		@media only screen and (max-width:$xs-screen) { @content; }
+	}
+	
+	@else if $media == inter-screens {
+		@media only screen and (max-width: $xs-screen) and (max-width: $s-screen){ @content;}
+	}
+
+	@else if $media == small-screens {
+		@media only screen and (max-width: $s-screen) { @content; }
+	}
+
+	@else if $media == medium-screens {
+		@media only screen and (max-width: $m-screen) { @content; }
+	}
+
+	@else if $media == nav-breakpoint {
+		@media only screen and (max-width: $nav-breakpoint) { @content; }
+	}
+
+	@else if $media == large-screens {
+		@media only screen and (max-width: $l-screen) { @content; }
+	}
+
+	@else if $media == x-large-screens {
+		@media only screen and (max-width: $xl-screen) { @content; }
+	}
+
+	@else if $media == short-screen-height {
+		@media only screen and (max-height: $short-screen-height) { @content; }
+	}
+	@else if $media == phone-screen-height {
+		@media only screen and (max-height: $phone-screen-height) { @content; }
+	}
+}

@@ -1,0 +1,249 @@
+// ------------------------------------------------------------
+// Filter zone
+// ------------------------------------------------------------
+
+// 1. The filter zone
+
+.filter-zone {
+	display: inline-block;
+	// @include padding-leader(16);
+	// @include padding-trailer(16);
+	@include transition(all, 500ms, ease-out);
+
+	// Media Queries
+	@include respond-to(small-screens){
+		// @include padding-leader(8);
+		// @include padding-trailer(8);
+	}
+}
+
+.filter-zone p {
+	@include fontsize(2.5, 2.4);
+
+	// Media Queries
+	@include respond-to(medium-screens){
+		@include fontsize(2.2, 1.7);
+	}
+	@include respond-to(small-screens){
+		@include fontsize(2, 4);
+	}	
+}	
+
+// 2. Selects
+.filter-zone .fancy-select {
+	display: inline-block;
+	@include fontsize(2, 2.6);
+	position: relative;
+	top: 50%;
+
+	// Media Queries
+	@include respond-to(small-screens){
+		@include fontsize(1.5);
+		top: 2px;
+	}
+}
+
+.filter-zone .fancy-select .trigger {
+	line-height: 25px!important;
+	margin-bottom: $fs*1;
+	@include fontsize(2.5);
+
+	// Media Queries
+	@include respond-to(medium-screens){
+		@include fontsize(2.2, 2.4);
+	}
+	@include respond-to(small-screens){
+		@include fontsize(2, 1.2);
+	}	
+}
+
+// Select Open position 
+.filter-zone .fancy-select .options {
+	top: $fs*5;
+	@include respond-to(medium-screens){
+		top: $fs*4;
+	}
+	@include respond-to(small-screens){
+		top: $fs*3;
+	}	
+}
+
+.custom-select{
+	background-color: transparent!important;
+}
+	@include respond-to(small-screens){
+		.fancy-select .trigger{
+			padding: 4px 24px 4px 4px;
+	}
+}
+
+// ------------------------------------------------------------
+// CSS by FancySelect
+// Source: http://code.octopuscreative.com/fancyselect/
+// Note: CSS override at line 155
+// ------------------------------------------------------------
+
+.fancy-select {
+	outline: 0;
+	border: 0; 
+	color: $black;
+	@extend %RealText-Regular;
+	display: inline-block;
+	position: relative;
+	display: inline-block;
+	position: relative;
+	top: 16px;
+	
+}
+
+.fancy-select.disabled {
+	opacity: 0.5;
+}
+
+.fancy-select select:focus + .trigger {
+	//box-shadow: 0 0 0 2px #4B5468;
+}
+
+.fancy-select select:focus + .trigger.open {
+	box-shadow: none;
+}
+
+.fancy-select .trigger {
+	@include fontsize(2.1);
+	border-radius: 4px;
+	cursor: pointer;
+	padding: 0 $fs*2.7 0 0;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	position: relative;
+	background: transparent;
+	border-top-color: #A5B2CB;
+	color: $black;
+	width: 200px;
+
+	transition: all 240ms ease-out;
+	-webkit-transition: all 240ms ease-out;
+	-moz-transition: all 240ms ease-out;
+	-ms-transition: all 240ms ease-out;
+	-o-transition: all 240ms ease-out;
+}
+
+.fancy-select .trigger:after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	border-bottom: 1px solid $brand_color_tertiary;
+	border-right: 1px solid $brand_color_tertiary;
+	-webkit-transform:rotate(45deg); 
+	  -moz-transform:rotate(45deg);
+	  -o-transform:rotate(45deg); 
+	  -ms-transform:rotate(45deg); 
+	  transform:rotate(45deg);
+	top: 7px;
+	right: 9px;
+}
+
+.fancy-select .trigger:hover {
+	color: $white;
+}
+
+.fancy-select .trigger.open {
+	color: $white;
+	box-shadow: none;
+}
+
+.fancy-select .trigger.open:after {
+	border-top-color: #7A8498;
+}
+
+.fancy-select .options {
+	list-style: none;
+	margin: 0;
+	position: absolute;
+	top: 40px;
+	left: -10px;
+	visibility: hidden;
+	opacity: 0;
+	z-index: 50;
+	max-height: 200px;
+	overflow: auto;
+	border-top: 2px solid $brand_color_secondary;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	min-width: 200px;
+	background-color: $white;
+	// @include translateY(-10px);
+	@include transition(all, .3s, ease-out);
+}
+
+.fancy-select .options.open {
+	visibility: visible;
+	opacity: 1;
+	// @include translateY(0);
+
+	/* have to use a non-visibility transition to prevent this iOS issue (bug?): */
+	/*http://stackoverflow.com/questions/10736478/css-animation-visibility-visible-works-on-chrome-and-safari-but-not-on-ios*/
+	transition: opacity 300ms ease-out, top 300ms ease-out;
+	-webkit-transition: opacity 300ms ease-out, top 300ms ease-out;
+	-moz-transition: opacity 300ms ease-out, top 300ms ease-out;
+	-ms-transition: opacity 300ms ease-out, top 300ms ease-out;
+	-o-transition: opacity 300ms ease-out, top 300ms ease-out;
+}
+
+.fancy-select .options.overflowing {
+	top: auto;
+	bottom: 40px;
+
+	transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+	-webkit-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+	-moz-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+	-ms-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+	-o-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+}
+
+.fancy-select .options.overflowing.open {
+	top: auto;
+	bottom: 50px;
+
+	transition: opacity 300ms ease-out, bottom 300ms ease-out;
+	-webkit-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+	-moz-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+	-ms-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+	-o-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+}
+
+.fancy-select .options li {
+	padding: 8px 12px;
+	cursor: pointer;
+	color: $brand_color_tertiary;
+	white-space: nowrap;
+	@include fontsize(1.6);
+
+	transition: all 150ms ease-out;
+	-webkit-transition: all 150ms ease-out;
+	-moz-transition: all 150ms ease-out;
+	-ms-transition: all 150ms ease-out;
+	-o-transition: all 150ms ease-out;
+}
+
+.fancy-select .options li.selected {
+}
+
+.fancy-select .options li.hover {
+	color: $text_color;
+	background-color: #fafafa;
+}
+
+
+// ------------------------------------------------------------
+// Override
+// ------------------------------------------------------------
+
+.fancy-select .trigger {
+	background-color: transparent;
+	border-radius: 0;
+	color: $brand_color_tertiary;
+	box-shadow: none;
+	width: auto;
+}

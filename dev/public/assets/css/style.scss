@@ -1,0 +1,109 @@
+// ::Imports pre-render. Must be after reset
+// ------------------------------------------------------------
+
+@import "libs/reset";
+@import "libs/mixins";
+@import "libs/typography"; 	
+@import "libs/gridset";		
+
+// ------------------------------------------------------------
+// Helpers Loading
+// ------------------------------------------------------------
+
+@import "helpers/colors";
+@import "helpers/font-sizes";
+@import "helpers/queries";
+@import "helpers/z-index";
+
+// Use SASS globbing to import all _.scss files in the module folder.
+// These should be independent modules that follow the BEM/SMACSS way
+// @import "modules/*"; 
+
+
+
+/* ::Base styles */
+/* ------------------------------------------------------------ */
+
+html,body,.content{
+	font-size: 62.5%; // scale REM base settings: 1rem = 10px
+	@include respond-to-max(768px, $IE9: false) { // Stop at precise width, as we're talking about devices
+		-webkit-text-size-adjust: 100%;	// Stops text scaling in iOS.
+	}
+}
+
+// unit in use. 
+$fs:1rem;
+
+body{
+	@extend %RealText-Regular;
+	background-color: $black;
+	@include fontsize(1.6); 
+	&.prevent-scroll {
+		// overflow: hidden;
+		position: relative;
+		&:before {
+			position: absolute;
+			content: '';
+			display: block;
+			width: 100%;
+			height: 100%;
+			background-color: #000;
+			background-color: rgba(0, 0, 0, .6);
+			z-index: $z-body-overlay;
+		}
+	}
+}
+
+h1,h2, p, a, li a,span,q,blockquote,button,input {
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+}
+
+main{
+	position: relative;
+	height: 100%;
+}
+
+.wrapper {
+	max-width: 1200px;
+	width: 90%;
+	margin: 0 auto;
+	position: relative;
+}
+
+.wrapper.full-width {
+	max-width: 90%;
+	max-width: 1900px;
+}
+
+.content {
+	position: relative;
+}
+
+.content.with-sub-nav {
+	margin-top: 122px;
+	@include respond-to(nav-breakpoint) {
+		margin-top: 140px;
+	}
+}
+
+.content.home {
+	background-color: #f3f3f3;
+}
+
+::-webkit-input-placeholder {
+	color: $info_grey;
+}
+
+
+/* ::Import styles */
+/* ------------------------------------------------------------ */
+
+@import "nav";		
+@import "second-nav";		
+@import "filter-zone";		
+@import "dragdealer";		
+@import "button";		
+@import "modules/map";
