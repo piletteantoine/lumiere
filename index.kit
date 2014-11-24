@@ -1,11 +1,30 @@
 <!-- @import header.kit -->
-
-<main>
+	<div class="wrapper">	
+		<div class="secondary-navigation">
+			<div class="filter-zone">
+				<p class="headings">Je recherche un 
+					<select class="custom-select">
+						<option>long métrage</option>
+						<option>court métrage</option>
+					</select>
+					tourné
+					<select class="custom-select">
+						<option>en Belgique</option>
+						<option>au Sénégal</option>
+						<option>au Bénin</option>
+						<option>en Suisse</option>
+						<option>en France</option>
+					</select>
+				</p>
+			</div><!-- /.filter-zone -->
+			<button class="filter-validation">valider</button>
+		</div>
+	</div>		
+	<div class="map" id="map"></div>
 	<div class="dragdealer">
-		<span class="slider-info">2015</span>
+		<!-- <span class="slider-info">2015</span> -->
 		<input class="handle" type="range" min="0" max="100" step="1" value="0">
 	</div>
-	<div class="map" id="map"></div>
-</main>
+
 
 <!-- @import footer.kit -->

@@ -1,0 +1,27 @@
+.secondary-navigation{
+	position: absolute;
+	left: 50%;
+	min-width: 70%;
+  	top: $fs*7;
+  	background-color: $white;
+	transform: translate(-50%, -50%);
+	padding: $fs*2.3 $fs*3 $fs*1.7 $fs*3;
+	text-align: center;
+	z-index: $z-map-ui;
+	box-shadow: rgba(255,255,255,0.1) $fs*1 $fs*1 $fs*4;
+	@include transition(all, 0.2s, ease-in-out);
+	&:hover{
+		background-color: $black;
+		.headings{
+			color: white;
+		}
+		.filter-validation{
+			border: 2px solid $white;
+			color: $white;
+		}
+	}
+}
+.secondary-navigation .headings{
+	@include fontsize(2.5,2.4); 
+	color: $black;
+}

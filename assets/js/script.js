@@ -2,6 +2,12 @@
 // PLUGINS
 // ------------------------------------------------------------
 
+/*
+ * Fancy Select (3.5 kb minified)
+ * http://code.octopuscreative.com/fancyselect/
+ */
+(function(){var a;a=window.jQuery||window.Zepto||window.$;a.fn.fancySelect=function(d){var c,b;if(d==null){d={}}b=a.extend({forceiOS:false,includeBlank:false,optionTemplate:function(e){return e.text()},triggerTemplate:function(e){return e.text()}},d);c=!!navigator.userAgent.match(/iP(hone|od|ad)/i);return this.each(function(){var e,i,g,j,f,h,k;j=a(this);if(j.hasClass("fancified")||j[0].tagName!=="SELECT"){return}j.addClass("fancified");j.css({width:1,height:1,display:"block",position:"absolute",top:0,left:0,opacity:0});j.wrap('<div class="fancy-select">');k=j.parent();if(j.data("class")){k.addClass(j.data("class"))}k.append('<div class="trigger">');if(!(c&&!b.forceiOS)){k.append('<ul class="options">')}f=k.find(".trigger");g=k.find(".options");i=j.prop("disabled");if(i){k.addClass("disabled")}h=function(){var l;l=b.triggerTemplate(j.find(":selected"));return f.html(l)};j.on("blur.fs",function(){if(f.hasClass("open")){return setTimeout(function(){return f.trigger("close.fs")},120)}});f.on("close.fs",function(){f.removeClass("open");return g.removeClass("open")});f.on("click.fs",function(){var l,m;if(!i){f.toggleClass("open");if(c&&!b.forceiOS){if(f.hasClass("open")){return j.focus()}}else{if(f.hasClass("open")){m=f.parent();l=m.offsetParent();if((m.offset().top+m.outerHeight()+g.outerHeight()+20)>a(window).height()+a(window).scrollTop()){g.addClass("overflowing")}else{g.removeClass("overflowing")}}g.toggleClass("open");if(!c){return j.focus()}}}});j.on("enable",function(){j.prop("disabled",false);k.removeClass("disabled");i=false;return e()});j.on("disable",function(){j.prop("disabled",true);k.addClass("disabled");return i=true});j.on("change.fs",function(l){if(l.originalEvent&&l.originalEvent.isTrusted){return l.stopPropagation()}else{return h()}});j.on("keydown",function(n){var m,o,l;l=n.which;m=g.find(".hover");m.removeClass("hover");if(!g.hasClass("open")){if(l===13||l===32||l===38||l===40){n.preventDefault();return f.trigger("click.fs")}}else{if(l===38){n.preventDefault();if(m.length&&m.index()>0){m.prev().addClass("hover")}else{g.find("li:last-child").addClass("hover")}}else{if(l===40){n.preventDefault();if(m.length&&m.index()<g.find("li").length-1){m.next().addClass("hover")}else{g.find("li:first-child").addClass("hover")}}else{if(l===27){n.preventDefault();f.trigger("click.fs")}else{if(l===13||l===32){n.preventDefault();m.trigger("click.fs")}else{if(l===9){if(f.hasClass("open")){f.trigger("close.fs")}}}}}}o=g.find(".hover");if(o.length){g.scrollTop(0);return g.scrollTop(o.position().top-12)}}});g.on("click.fs","li",function(m){var l;l=a(this);j.val(l.data("raw-value"));if(!c){j.trigger("blur.fs").trigger("focus.fs")}g.find(".selected").removeClass("selected");l.addClass("selected");f.addClass("selected");return j.val(l.data("raw-value")).trigger("change.fs").trigger("blur.fs").trigger("focus.fs")});g.on("mouseenter.fs","li",function(){var m,l;l=a(this);m=g.find(".hover");m.removeClass("hover");return l.addClass("hover")});g.on("mouseleave.fs","li",function(){return g.find(".hover").removeClass("hover")});e=function(){var l;h();if(c&&!b.forceiOS){return}l=j.find("option");return j.find("option").each(function(n,m){var o;m=a(m);if(!m.prop("disabled")&&(m.val()||b.includeBlank)){o=b.optionTemplate(m);if(m.prop("selected")){return g.append('<li data-raw-value="'+(m.val())+'" class="selected">'+o+"</li>")}else{return g.append('<li data-raw-value="'+(m.val())+'">'+o+"</li>")}}})};j.on("update.fs",function(){k.find(".options").empty();return e()});return e()})}}).call(this);
+
 // ------------------------------------------------------------
 // DOCUMENT READY
 // ------------------------------------------------------------
@@ -27,7 +33,7 @@ var _window = $(window),
 // FancySelect
 // ------------------------------------------------------------
 
-// $('.custom-select').fancySelect();
+$('.custom-select').fancySelect();
 
 
 // ------------------------------------------------------------
@@ -47,7 +53,7 @@ var _window = $(window),
 	    {
 	        "stylers": [
 	            {
-	                "color": "#131314"
+	                "color": "#121212"
 	            }
 	        ]
 	    },
@@ -55,13 +61,24 @@ var _window = $(window),
 	        "featureType": "water",
 	        "stylers": [
 	            {
-	                "color": "#131313"
+	                "color": "#121212"
 	            },
 	            {
-	                "lightness": 7
+	                "lightness": 0
 	            }
 	        ]
 	    },
+	    {
+            "featureType": "landscape",
+            "stylers": [
+	            {
+	                "color": "#121212"
+	            },
+	            {
+	                "lightness": 35
+	            }
+	        ]
+	        },
 	    {
 	        "elementType": "labels.text.fill",
 	        "stylers": [
@@ -69,7 +86,7 @@ var _window = $(window),
 	                "visibility": "on"
 	            },
 	            {
-	                "lightness": 25
+	                "lightness": 100
 	            }
 	        ]
 	    }
@@ -77,62 +94,106 @@ var _window = $(window),
 
 	// Init the Map 
 	var map = new google.maps.Map(document.getElementById('map'), {
-	  zoom: 12,
+	  zoom: 3,
 	  // center: new google.maps.LatLng(10, 10),
-	  center:  new google.maps.LatLng(51.48184, 7.21624),
+	  center:  new google.maps.LatLng(0, 0),
 	  mapTypeId: google.maps.MapTypeId.ROADMAP,
 	  styles: style
 	});
 
-	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.open('GET', 'ruhr.svg', false);
-	xmlhttp.send();
 
 
-	var overlay = new SvgOverlay({
-	  content: xmlhttp.responseText,
-	  map: map
-	});
+	 var markers = [];
+	  for (var i = 0; i < 100; i++) {
+	    var dataPhoto = data.photos[i];
+	    var latLng = new google.maps.LatLng(dataPhoto.latitude,
+	              dataPhoto.longitude);
+	    var marker = new google.maps.Marker({
+	      	position: latLng,
+	      	icon: "assets/img/zoom-0.png"
+	    });
+	    markers.push(marker);
+	  }
 
-	var svg = overlay.getSvg();
+	  //set style options for marker clusters (these are the default styles)
+	  var mcOptions = {styles: [{
+	  height: 40,
+	  url: "assets/img/zoom-1.png",
+	  width: 40
+	  },
+	  {
+	  height: 56,
+	  url: "assets/img/zoom-2.png",
+	  width: 56
+	  },
+	  {
+	  height: 66,
+	  url: "http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/images/m3.png",
+	  width: 66
+	  },
+	  {
+	  height: 78,
+	  url: "http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/images/m4.png",
+	  width: 78
+	  },
+	  {
+	  height: 90,
+	  url: "http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/images/m5.png",
+	  width: 90
+	  }]}
 
-	svg.setAttribute('opacity', 1);
-	var bounds = new google.maps.LatLngBounds();
+	  var markerCluster = new MarkerClusterer(map, markers, mcOptions);
 
 
-	var markers = [
-		  ['Castelluci - Bochum', 51.48184,7.21624],
-		  ['Barney - Essen', 51.455643,7.011555],
-		  ['Feldman - Dortmund', 51.51359,7.46530]
-	 ];
-
-	// Create our info window content   
-	  var infoWindowContent = [
-		['<div class="info_content">' +
-		'<h3>Castelluci - Bochum</h3>' + 
-		'</div>'],
-		['<div class="info_content">' +
-		'<h3>Barney - Essen</h3>' + 
-		'</div>'],
-		['<div class="info_content">' +
-		'<h3>Feldman - Dortmund</h3>' 
-		+ '</div>']
-	];
+	// var xmlhttp = new XMLHttpRequest();
+	// xmlhttp.open('GET', 'ruhr.svg', false);
+	// xmlhttp.send();
 
 
-   // InfoWindow Styling Here 
-	   var infoWindow = new google.maps.InfoWindow(), marker, i;
+	// var overlay = new SvgOverlay({
+	//   content: xmlhttp.responseText,
+	//   map: map
+	// });
 
-		google.maps.event.addListener(infoWindow, 'domready', function() {
-			 var l = $('#info_content').parent().parent().parent().parent();
-			 for (var i = 0; i < l.length; i++) {
-				 if($(l[i]).css('z-index') == 'auto') {
-					 $(l[i]).css('text-align', 'center');
-					 $(l[i]).css('font-size', '17px');
-					 $(l[i]).css('cursor', 'pointer');
-				 }
-			 }
-		 });
+	// var svg = overlay.getSvg();
+
+	// svg.setAttribute('opacity', 1);
+	// var bounds = new google.maps.LatLngBounds();
+
+
+	// var markers = [
+	// 	  ['Castelluci - Bochum', 51.48184,7.21624],
+	// 	  ['Barney - Essen', 51.455643,7.011555],
+	// 	  ['Feldman - Dortmund', 51.51359,7.46530]
+	//  ];
+
+	// // Create our info window content   
+	//   var infoWindowContent = [
+	// 	['<div class="info_content">' +
+	// 	'<h3>Castelluci - Bochum</h3>' + 
+	// 	'</div>'],
+	// 	['<div class="info_content">' +
+	// 	'<h3>Barney - Essen</h3>' + 
+	// 	'</div>'],
+	// 	['<div class="info_content">' +
+	// 	'<h3>Feldman - Dortmund</h3>' 
+	// 	+ '</div>']
+	// ];
+
+
+ //   // InfoWindow Styling Here 
+	//    var infoWindow = new google.maps.InfoWindow(), marker, i;
+
+	// 	google.maps.event.addListener(infoWindow, 'domready', function() {
+	// 		 var l = $('#info_content').parent().parent().parent().parent();
+	// 		 for (var i = 0; i < l.length; i++) {
+	// 			 if($(l[i]).css('z-index') == 'auto') {
+	// 				 $(l[i]).css('text-align', 'center');
+	// 				 $(l[i]).css('font-size', '17px');
+	// 				 $(l[i]).css('cursor', 'pointer');
+	// 			 }
+	// 		 }
+	// 	 });
 
 	// var infoWindow = new google.maps.InfoWindow(), marker, i;
 
@@ -141,25 +202,25 @@ var _window = $(window),
 	// Source: http://stackoverflow.com/questions/21514388/google-maps-api-open-multiple-info-windows-by-default
 	// ------------------------------------------
 
-	for (var i = 0; i < markers.length; i++) {
-		var marker = new google.maps.Marker({
-			position: new google.maps.LatLng(markers[i][1], markers[i][2]), // Lat - Lon
-			map: map
-		});
+	// for (var i = 0; i < markers.length; i++) {
+	// 	var marker = new google.maps.Marker({
+	// 		position: new google.maps.LatLng(markers[i][1], markers[i][2]), // Lat - Lon
+	// 		map: map
+	// 	});
 
-		var icon = 'M1.7317647058823529';
+	// 	var icon = 'M1.7317647058823529';
 
-		marker.setIcon({
-		  anchor: new google.maps.Point(0.85, 0.85),
-		  path: icon
-		});
+	// 	marker.setIcon({
+	// 	  anchor: new google.maps.Point(0.85, 0.85),
+	// 	  path: icon
+	// 	});
 
-		var infowindow = new google.maps.InfoWindow({
-		  content: markers[i][0], // Name
-		  maxWidth: 160
-		});
-		infowindow.open(map, marker);
-	}
+	// 	var infowindow = new google.maps.InfoWindow({
+	// 	  content: markers[i][0], // Name
+	// 	  maxWidth: 160
+	// 	});
+	// 	infowindow.open(map, marker);
+	// }
 
 
 	//

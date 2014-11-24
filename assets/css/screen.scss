@@ -24,6 +24,7 @@
 /* ::Base styles */
 /* ------------------------------------------------------------ */
 
+html,body,.content, 
 html {
 	font-size: 62.5%; // scale REM base settings: 1rem = 10px
 	@include respond-to-max(768px, $IE9: false) { // Stop at precise width, as we're talking about devices
@@ -36,7 +37,7 @@ $fs:1rem;
 
 body{
 	@extend %RealText-Regular;
-	background-color: $white;
+	background-color: $black;
 	&.prevent-scroll {
 		// overflow: hidden;
 		position: relative;
@@ -60,6 +61,11 @@ h1,h2, p, a, li a,span,q,blockquote,button,input {
   -ms-font-smoothing: antialiased;
 }
 
+main{
+	position: relative;
+	height: 100%;
+}
+
 .wrapper {
 	max-width: 1200px;
 	width: 90%;
@@ -73,7 +79,6 @@ h1,h2, p, a, li a,span,q,blockquote,button,input {
 }
 
 .content {
-	margin-top: 65px;
 	position: relative;
 }
 
@@ -96,4 +101,9 @@ h1,h2, p, a, li a,span,q,blockquote,button,input {
 /* ::Import styles */
 /* ------------------------------------------------------------ */
 
-@import "modules/map";		
+@import "nav";		
+@import "second-nav";		
+@import "filter-zone";		
+@import "dragdealer";		
+@import "button";		
+@import "modules/map";

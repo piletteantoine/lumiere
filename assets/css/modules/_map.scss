@@ -1,4 +1,14 @@
 .map{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: $fs*6.5;
 	width: 100%;
-	height: $fs*200;
+	height: 100%;
+}
+
+.map .gm-style-mtc{
+	display: none;
 }

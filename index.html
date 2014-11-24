@@ -20,25 +20,43 @@
 		<nav class="menu">
 			<div class="wrapper">
 				<a href="index.html" class="logo"><img src="assets/img/lumiere-logo.png" alt="Lumiere"></a><!-- /.logo-->
-				<ul class="menu-list">
+				<!-- <ul class="menu-list">
 					<li><a href="/">Link</a></li>
 					<li><a href="/">Link</a></li>
 					<li><a class="/">link</a></li>
 					<li><a href="/">Link</a></li>
-				</ul><!-- /.menu -->
+				</ul> --><!-- /.menu -->
 			</div><!-- /.wrapper -->
 		</nav><!-- /.menu-->
 	</header>
 
-	<div class="content">
-
-<main>
+	<div class="wrapper">	
+		<div class="secondary-navigation">
+			<div class="filter-zone">
+				<p class="headings">Je recherche un 
+					<select class="custom-select">
+						<option>long métrage</option>
+						<option>court métrage</option>
+					</select>
+					tourné
+					<select class="custom-select">
+						<option>en Belgique</option>
+						<option>au Sénégal</option>
+						<option>au Bénin</option>
+						<option>en Suisse</option>
+						<option>en France</option>
+					</select>
+				</p>
+			</div><!-- /.filter-zone -->
+			<button class="filter-validation">valider</button>
+		</div>
+	</div>		
+	<div class="map" id="map"></div>
 	<div class="dragdealer">
-		<span class="slider-info">2015</span>
+		<!-- <span class="slider-info">2015</span> -->
 		<input class="handle" type="range" min="0" max="100" step="1" value="0">
 	</div>
-	<div class="map" id="map"></div>
-</main>
+
 
 
 			<footer></footer>
@@ -52,6 +70,9 @@
 		
 		<!-- Map -->
 	 	<script src="http://maps.googleapis.com/maps/api/js?v=3.exp&amp;libraries=places&amp;sensor=false"></script>
+	 	
+	 	<script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/data.json"></script>
+	 	<script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
 		
 		<!-- Custom JS -->
 		<script src="assets/js/script.js"></script>

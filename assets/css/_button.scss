@@ -1,0 +1,17 @@
+.btn{
+
+}
+
+.filter-validation{
+	@include transition(all, 0.2s, ease-in-out);
+	padding: $fs*.7 $fs $fs*.7 $fs;
+	border: 2px solid $black;
+	background-color: transparent;
+	display: inline-block;
+	@include fontsize(1.4); 
+	margin-left: $fs*1;
+	&:hover{
+		background-color: $white;
+		color: $text_color!important;
+	}
+}
