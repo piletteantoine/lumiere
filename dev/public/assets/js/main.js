@@ -96,9 +96,19 @@
         } );
 
         $(document).on('click', '.slideRight', function(e) {
+            var $this = $(this);
+            href = $this.attr( 'href' );
+
+            $('#slideRight .modal-body').load(href + ' #content');
+            $('#slideRight').modal();
+        
+            return false;
+        } );
+
+        $(document).on('click', '.addCard', function(e) {
             e.preventDefault();
 
-            $('#slideRight').modal();
+            $('#addCard').modal();
         
             return false;
         } );
