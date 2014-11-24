@@ -39,77 +39,63 @@
                         </a>
                         <ul class="dropdown-menu" role="menu">
                             @foreach( $pages as $index => $page )
-                            <li><a href="{{ URL::route('public.pages.details', ['id' => $page->id]) }}">{{ $page->title }}</a></li>
+                            <li><a class="ajax" href="{{ URL::route('public.pages.details', ['id' => $page->id]) }}">{{ $page->title }}</a></li>
                             @endforeach
-                        @endif
-                    </ul>
-                </li>
-                @endif
-                @if( ! is_null( $pages ) && ! empty( $pages ) )
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <strong>@lang('menu.about.dropdown')</strong>
-                        <span class="glyphicon glyphicon-chevron-down"></span>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        @foreach( $pages as $index => $page )
-                        <li><a class="ajax" href="{{ URL::route('public.pages.details', ['id' => $page->id]) }}">{{ $page->title }}</a></li>
-                        @endforeach
-                    </ul>
-                </li>
-                @endif
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                @if( Auth::check() )
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <span class="glyphicon glyphicon-user"></span> 
-                        <strong>@lang('menu.profile')</strong>
-                        <span class="glyphicon glyphicon-chevron-down"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <div class="navbar-login">
-                                <div class="row">
-                                    <div class="col-lg-4">
-                                        <p class="text-center">
-                                            <span class="glyphicon glyphicon-user icon-size"></span>
-                                        </p>
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <p class="text-left"><strong>{{ Auth::user()->first_name . ' ' . Auth::user()->last_name }}</strong></p>
-                                        <p class="text-left small">{{ Auth::user()->email }}</p>
-                                        <p class="text-left">
-                                            <a class="ajax" href="{{ URL::route('profile') }}" class="btn btn-primary btn-block btn-sm">@lang('menu.edit_profile')</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <div class="navbar-login navbar-login-session">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <p>
-                                                <a href="{{ URL::route('logout') }}" class="btn btn-danger btn-block">@lang('menu.logout')</a>
-                                            </p>
-                                            @if( Auth::user()->role()->first()->name_tag == 'admin' )
-                                            <p>
-                                                <a href="{{ URL::route('admin.home') }}" class="btn btn-info btn-block">@lang('menu.administration')</a>
-                                            </p>
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
                         </ul>
                     </li>
-                    @else
-                    <li><a href="{{ URL::route('login') }}">@lang('menu.login')</a></li>
-                    <li><a href="{{ URL::route('register') }}">@lang('menu.register')</a></li>
                     @endif
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    @if( Auth::check() )
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-user"></span> 
+                            <strong>@lang('menu.profile')</strong>
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="navbar-login">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <p class="text-center">
+                                                <span class="glyphicon glyphicon-user icon-size"></span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <p class="text-left"><strong>{{ Auth::user()->first_name . ' ' . Auth::user()->last_name }}</strong></p>
+                                            <p class="text-left small">{{ Auth::user()->email }}</p>
+                                            <p class="text-left">
+                                                <a class="ajax" href="{{ URL::route('profile') }}" class="btn btn-primary btn-block btn-sm">@lang('menu.edit_profile')</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <div class="navbar-login navbar-login-session">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <p>
+                                                    <a href="{{ URL::route('logout') }}" class="btn btn-danger btn-block">@lang('menu.logout')</a>
+                                                </p>
+                                                @if( Auth::user()->role()->first()->name_tag == 'admin' )
+                                                <p>
+                                                    <a href="{{ URL::route('admin.home') }}" class="btn btn-info btn-block">@lang('menu.administration')</a>
+                                                </p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        @else
+                        <li><a href="{{ URL::route('login') }}">@lang('menu.login')</a></li>
+                        <li><a href="{{ URL::route('register') }}">@lang('menu.register')</a></li>
+                        @endif
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
 </div>
