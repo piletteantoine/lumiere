@@ -19,7 +19,7 @@
                         <span class="glyphicon glyphicon-chevron-down"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a class="ajax" href="{{ URL::route('public.cards.new') }}">@lang('menu.cards.new')</a></li>
+                        <li><a href="{{ URL::route('public.cards.new') }}">@lang('menu.cards.new')</a></li>
                         <li><a href="{{ URL::route('public.cards.manage') }}">@lang('menu.cards.manage')</a></li>
                         @if( ! is_null( $categories ) && ! empty( $categories ) )
                         <li class="divider"></li>

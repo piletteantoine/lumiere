@@ -18,6 +18,8 @@
 
     <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src='http://maps.googleapis.com/maps/api/js?sensor=false&#038;ver=4.0'></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
     @if( ! is_null( $inline_js ) && ! empty( $inline_js ) )
     <script type="text/javascript">{{ $inline_js }}</script>
     @endif
