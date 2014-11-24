@@ -56,7 +56,7 @@ ul {
 li {
   word-spacing: 0; }
 
-body, .fancy-select {
+body, .fancy-select, .stations svg {
   font-family: "RealText-Regular" helvetica, arial, sans-serif; }
 
 @font-face {
@@ -297,7 +297,7 @@ main {
   -o-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-  top: 11px;
+  top: 7px;
   right: 9px; }
 
 .fancy-select .trigger:hover {
@@ -478,3 +478,19 @@ main {
 
 .map .gm-style-mtc {
   display: none; }
+
+.stations, .stations svg {
+  position: absolute; }
+
+.stations svg {
+  font: 15px;
+  color: #000000; }
+
+.stations circle {
+  fill: #ffffff;
+  stroke: #ffffff;
+  stroke-width: 10px;
+  cursor: pointer; }
+
+.stations text {
+  fill: #000000; }

@@ -12,3 +12,23 @@
 .map .gm-style-mtc{
 	display: none;
 }
+
+.stations, .stations svg {
+  position: absolute;
+}
+
+.stations svg {
+  @extend %RealText-Regular;
+  font: 15px;
+  color: #000000;
+}
+
+.stations circle {
+  fill: #ffffff;
+  // stroke: rgba(255,255,255,0.1);
+  stroke: $white;
+  stroke-width: 10px;
+  cursor: pointer;
+}
+
+.stations text { fill: #000000; }
