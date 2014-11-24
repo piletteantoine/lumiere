@@ -5,7 +5,7 @@
 </div>
 @endif
 
-<div id="google-map" style="width: 800px; height: 550px"></div>
+<div id="google-map" class="map"></div>
 
 <script type='text/javascript' src='http://maps.googleapis.com/maps/api/js?sensor=false&#038;ver=4.0'></script>
 <script type="text/javascript">

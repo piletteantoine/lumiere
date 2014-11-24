@@ -5,9 +5,8 @@
 </div>
 @endif
 
-<div class="col-md-8">
-    <div id="google-map" style="width: 800px; height: 550px"></div>
-</div>
+<div id="google-map" class="map"></div>
+
 <div class="col-md-4">
     <h3>Categories :</h3>
     <ul>

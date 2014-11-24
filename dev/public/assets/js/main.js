@@ -16,19 +16,69 @@
     };
 
     jQuery( function() {
+        var styles = [
+                {
+                    "stylers": [
+                        {
+                            "visibility": "simplified"
+                        }
+                    ]
+                },
+                {
+                    "stylers": [
+                        {
+                            "color": "#121212"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "water",
+                    "stylers": [
+                        {
+                            "color": "#121212"
+                        },
+                        {
+                            "lightness": 0
+                        }
+                    ]
+                },
+                {
+                    "featureType": "landscape",
+                    "stylers": [
+                        {
+                            "color": "#121212"
+                        },
+                        {
+                            "lightness": 35
+                        }
+                    ]
+                    },
+                {
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "visibility": "on"
+                        },
+                        {
+                            "lightness": 100
+                        }
+                    ]
+                }
+            ]
         $ = jQuery.noConflict();
         $ajaxLoader = '<div class="ajax-loader"></div>';
 
         var latlng = new google.maps.LatLng( 50.833, 4.333 );
         map = new google.maps.Map( document.getElementById( 'google-map' ), {
-            zoom: 8,
+            zoom: 3,
             center: latlng,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             panControl: 0,
             zoomControl: 0,
             mapTypeControl: 0,
-            scaleControl: 0,
+            scaleControl: 1,
             streetViewControl: 0,
+            'styles': styles,
             overviewMapControl: 0
         });
 
