@@ -51,8 +51,6 @@
     $ = jQuery.noConflict();
     $ajaxLoader = '<div class="ajax-loader"></div>';
 
-    // Localization variable = RESTAURANTMETABOXESL10n
-
     if( $('#geolocation_address').length ) {
         var address   = $('#geolocation_address').val();
         var latitude  = $('#geolocation_latitude').val();

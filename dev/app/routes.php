@@ -1,6 +1,13 @@
 <?php
 
 Route::pattern('id', '[0-9]+');
+Route::pattern('category', '[0-9]+');
+Route::pattern('lattop', '[A-Za-z]+');
+Route::pattern('lngtop', '[A-Za-z]+');
+Route::pattern('latbottom', '[A-Za-z]+');
+Route::pattern('lngbottom', '[A-Za-z]+');
+Route::pattern('yearfrom', '[0-9]+');
+Route::pattern('yearto', '[0-9]+');
 
 /* Basic routes */
 Route::get('/', array('as' => 'home', 'uses' => 'HomeController@showIndex'));
@@ -72,3 +79,6 @@ Route::post('/admin/cards/create', array('as' => 'admin.cards.create', 'uses' =>
 Route::get('/admin/cards/{id}/edit', array('as' => 'admin.cards.edit', 'uses' => 'Admin\CardsController@showEdit'));
 Route::post('/admin/cards/{id}/edit', array('as' => 'admin.cards.update', 'uses' => 'Admin\CardsController@postUpdate'));
 Route::post('/admin/cards/{id}/delete', array('as' => 'admin.cards.delete', 'uses' => 'Admin\CardsController@postDelete'));
+
+/* Rest Routes */
+Route::get('/rest/cards/{category?}/{lattop?}/{lngtop?}/{latbottom?}/{lngbottom?}/{yearfrom?}/{yearto?}', array('as' => 'rest.cards', 'uses' => 'Rest\RestController@showCards'));

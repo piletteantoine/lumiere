@@ -9,7 +9,7 @@ return array(
 		
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => '127.0.0.1',
+			'host'      => '172.19.1.185',
 			'database'  => 'lumiere',
 			'username'  => 'lumiere',
 			'password'  => 'neC7jIv3lis4Git3U',
