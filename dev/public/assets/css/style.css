@@ -155,11 +155,14 @@ main {
   background-color: transparent;
   border-color: transparent; }
 
+.navbar-inverse .navbar-nav > .active > a {
+  background-color: transparent !important; }
+
 .secondary-navigation {
   position: absolute;
   left: 50%;
   min-width: 70%;
-  top: 7rem;
+  top: 12rem;
   background-color: #ffffff;
   transform: translate(-50%, -50%);
   padding: 2.3rem 3rem 1.7rem 3rem;
