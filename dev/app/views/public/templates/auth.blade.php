@@ -26,8 +26,8 @@
   </head>
   <body>
 
-    <div class="container-fluid">
-    {{ $content }}
+    <div id="content">
+        {{ $content }}
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

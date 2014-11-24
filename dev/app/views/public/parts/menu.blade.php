@@ -19,8 +19,8 @@
                         <span class="glyphicon glyphicon-chevron-down"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="{{ URL::route('public.cards.new') }}">@lang('menu.cards.new')</a></li>
-                        <li><a href="{{ URL::route('public.cards.manage') }}">@lang('menu.cards.manage')</a></li>
+                        <li><a class="slideRight" href="{{ URL::route('public.cards.new') }}">@lang('menu.cards.new')</a></li>
+                        <li><a class="slideRight" href="{{ URL::route('public.cards.manage') }}">@lang('menu.cards.manage')</a></li>
                         @if( ! is_null( $categories ) && ! empty( $categories ) )
                         <li class="divider"></li>
                             @foreach( $categories as $category )
@@ -58,14 +58,14 @@
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <p class="text-center">
-                                            {{ Auth::user()->get_avatar_url() ? '<img src="' . Auth::user()->get_avatar_url() . '" alt="' . Lang::get('user.avatar') . '" class="img-circle">' : '<span class="glyphicon glyphicon-user icon-size"></span>' }}
+                                            <span class="glyphicon glyphicon-user icon-size"></span>
                                         </p>
                                     </div>
                                     <div class="col-lg-8">
                                         <p class="text-left"><strong>{{ Auth::user()->first_name . ' ' . Auth::user()->last_name }}</strong></p>
                                         <p class="text-left small">{{ Auth::user()->email }}</p>
                                         <p class="text-left">
-                                            <a href="{{ URL::route('profile') }}" class="btn btn-primary btn-block btn-sm">@lang('menu.edit_profile')</a>
+                                            <a class="ajax" href="{{ URL::route('profile') }}" class="btn btn-primary btn-block btn-sm">@lang('menu.edit_profile')</a>
                                         </p>
                                     </div>
                                 </div>
@@ -91,8 +91,8 @@
                     </ul>
                 </li>
                 @else
-                <li><a href="{{ URL::route('login') }}">@lang('menu.login')</a></li>
-                <li><a href="{{ URL::route('register') }}">@lang('menu.register')</a></li>
+                <li><a class="ajax" href="{{ URL::route('login') }}">@lang('menu.login')</a></li>
+                <li><a class="ajax" href="{{ URL::route('register') }}">@lang('menu.register')</a></li>
                 @endif
             </ul>
         </div>

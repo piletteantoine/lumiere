@@ -38,8 +38,16 @@
             var $this = $(this);
             href = $this.attr( 'href' );
 
-            $('#add .modal-body').load(href + ' #content');
-            $('#add').modal();
+            $('#ajax .modal-body').load(href + ' #content');
+            $('#ajax').modal();
+        
+            return false;
+        } );
+
+        $(document).on('click', '.slideRight', function(e) {
+            e.preventDefault();
+
+            $('#slideRight').modal();
         
             return false;
         } );
@@ -47,6 +55,7 @@
         $(document).on('click', '.category-selector', function(e) {
             var $this = $(this);
             category = $this.data('id');
+            makeSentence();
         } );
 
         $(document).on('change, keyup', '#yearfrom', function(e) {
@@ -68,6 +77,93 @@
             makeSentence();
             getCards();
         });
+
+        if( $('#geolocation_address').length ) {
+            var address   = $('#geolocation_address').val();
+            var latitude  = $('#geolocation_latitude').val();
+            var longitude = $('#geolocation_longitude').val();
+
+            var latlng = ( latitude == '' && longitude == '' ) ? new google.maps.LatLng( 50.833, 4.333 ) : new google.maps.LatLng( latitude, longitude );
+            var mapadd = new google.maps.Map( document.getElementById( 'geolocation-google-map' ), {
+                zoom: 8,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                panControl: 0,
+                zoomControl: 0,
+                mapTypeControl: 0,
+                scaleControl: 0,
+                streetViewControl: 0,
+                overviewMapControl: 0
+            });
+            
+            var marker = new google.maps.Marker({
+                position: latlng,
+                map: mapadd,
+                draggable: true,
+            });
+
+            mapadd.addListener(marker, 'drag', function() {
+                var pos = marker.getPosition();
+                $( '#geolocation_latitude' ).val(pos.lat());
+                $( '#geolocation_latitude_shown' ).val(pos.lat());
+                $( '#geolocation_longitude' ).val(pos.lng());
+                $( '#geolocation_longitude_shown' ).val(pos.lng());
+            });
+
+            $(document).on('change, keyup', '#geolocation_address', function(e) {
+                var $this = $(this);
+                if( $this.val() != '' && $this.val().length >= 3 ) {
+                    var geocoder = new google.maps.Geocoder();
+                    geocoder.geocode({ address: $this.val() }, function(results, status) {
+                        if( status == google.maps.GeocoderStatus.OK ) {
+                            var pos = results[0].geometry.location;
+                            mapadd.setCenter(pos);
+                            marker.setPosition(pos);
+                            if( map.getZoom() < 12 ) {
+                                map.setZoom(12);
+                            }
+                            $('#geolocation-new-coordinates').show();
+
+                            $( '#geolocation_new_latitude' ).val(results[0].geometry.location.lat());
+                            $( '#geolocation_new_longitude' ).val(results[0].geometry.location.lng());
+                        }
+                    });
+                }
+            });
+
+            $(document).on("click", "#geolocation-use-new", function(e) {
+                e.preventDefault();
+
+                $( '#geolocation_latitude' ).val($( '#geolocation_new_latitude' ).val());
+                $( '#geolocation_latitude_shown' ).val($( '#geolocation_new_latitude' ).val());
+                $( '#geolocation_longitude' ).val($( '#geolocation_new_longitude' ).val());
+                $( '#geolocation_longitude_shown' ).val($( '#geolocation_new_longitude' ).val());
+            })
+        }
+
+        $(function() {
+            $( "#slider" ).slider({
+                  range: true,
+                  min: 1980,
+                  max: 2015,
+                  values: [ 2000, 2014 ],
+                  slide: function( event, ui ) {
+                    yearfrom = ui.values[ 0 ];
+                    yearto = ui.values[ 1 ];
+                    makeSentence();
+                    $("#slider").find(".ui-slider-handle").first().text(yearfrom);
+                    $("#slider").find(".ui-slider-handle").last().text(yearto);
+                  },
+                  create: function( event, ui ) {
+                    yearfrom = 2000;
+                    yearto = 2014;
+                    makeSentence();
+                    console.log('test');
+                    $("#slider").find(".ui-slider-handle").first().text(yearfrom);
+                    $("#slider").find(".ui-slider-handle").last().text(yearto);
+                  }
+            });
+        });
     });
 
     function makeSentence(){
@@ -88,6 +184,8 @@
 
         sentence += ".";
         $('#sentence').text(sentence);
+
+        getCards();
     }
 
     function getCards(){
