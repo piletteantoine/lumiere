@@ -1,14 +1,5 @@
 <?php
 
-Route::pattern('id', '[0-9]+');
-Route::pattern('category', '[0-9]+');
-Route::pattern('lattop', '[A-Za-z]+');
-Route::pattern('lngtop', '[A-Za-z]+');
-Route::pattern('latbottom', '[A-Za-z]+');
-Route::pattern('lngbottom', '[A-Za-z]+');
-Route::pattern('yearfrom', '[0-9]+');
-Route::pattern('yearto', '[0-9]+');
-
 /* Basic routes */
 Route::get('/', array('as' => 'home', 'uses' => 'HomeController@showIndex'));
 Route::get('/admin', array('as' => 'admin.home', 'uses' => 'Admin\HomeController@showIndex'));

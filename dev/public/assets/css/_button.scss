@@ -1,5 +1,25 @@
 .btn{
+	border-radius: 1px;
+}
 
+.btn-danger {
+	color: black;
+	background-color: $white;
+	border: solid 2px black;
+	width: 40%;
+	&:hover{
+		@include transition(all, .6s, ease);
+		background-color: black;
+		border: solid 2px black;
+		color: $white;
+	}
+}
+
+.btn-block {
+	display: block;
+	text-align: center;
+	margin: 0 auto;
+	margin-bottom: 1rem;
 }
 
 .filter-validation{

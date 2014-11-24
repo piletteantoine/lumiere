@@ -139,9 +139,9 @@
                 center: latlng,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 panControl: 0,
-                zoomControl: 0,
+                zoomControl: true,
                 mapTypeControl: 0,
-                scaleControl: 0,
+                scaleControl: true,
                 streetViewControl: 0,
                 overviewMapControl: 0
             });
@@ -217,7 +217,7 @@
     });
 
 $('.custom-select').fancySelect();
-    
+
 
     function makeSentence(){
         var sentence = "Votre recherche actuelle liste les films";
