@@ -17,6 +17,17 @@
     @endif
     <link href="{{ asset('assets/css/style.css?t=' . time() ) }}" rel="stylesheet">
 
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    @if( ! is_null( $inline_js ) && ! empty( $inline_js ) )
+    <script type="text/javascript">{{ $inline_js }}</script>
+    @endif
+    @if( ! is_null( $scripts ) && ! empty( $scripts ) )
+    @foreach( $scripts as $script )
+    <script src="{{ $script }}"></script>
+    @endforeach
+    @endif
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -48,18 +59,5 @@
             </div>
         </div>
     </div>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-    @if( ! is_null( $inline_js ) && ! empty( $inline_js ) )
-    <script type="text/javascript">{{ $inline_js }}</script>
-    @endif
-    @if( ! is_null( $scripts ) && ! empty( $scripts ) )
-    @foreach( $scripts as $script )
-    <script src="{{ $script }}"></script>
-    @endforeach
-    @endif
   </body>
 </html>
