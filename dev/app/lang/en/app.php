@@ -9,8 +9,8 @@ return array(
 	*/
 
 	'actions' => 'Actions',
-	'title' => 'Lumière manager',
-	'admin.title' => 'Lumière administration',
+	'title' => 'Lumière(s)',
+	'admin.title' => 'Lumière(s) : Admin',
 	'close' => 'Close',
 	'reset' => 'Reset form',
 );

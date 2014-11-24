@@ -10,10 +10,23 @@ class RestController extends \BaseController {
         $cards = Card::where('id', '>', '0');
         $cards->orderBy('id', 'desc');
 
-        if($category != null && $category > 0){
-            $cards->where('categories_id', '=', $category);
-        } elseif( Input::get('category', '') != '' ) {
-            $cards->where('categories_id', '=', Input::get('category', ''));
+        // Category
+        if( Input::get('category', '') != '' ) $category = Input::get('category', '');
+        if($category != null && $category > 0) $cards->where('categories_id', '=', $category);
+        
+        if( Input::get('yearfrom', '') != '' ) $yearfrom = Input::get('yearfrom', '');
+        if($yearfrom != null && $yearfrom > 0){
+            $cards->where('date_production', '>=', $yearfrom);
+        }
+
+        if( Input::get('yearto', '') != '' ){
+            $yearto = Input::get('yearto', '');
+            if($yearfrom == null || $yearfrom < 0){
+                $yearfrom = $yearto;
+                $cards->where('date_production', '=', $yearfrom);                
+            } else {
+                $cards->where('date_production', '<=', $yearto);
+            }
         }
 
         return Response::json(array('error' => false, 'cards' => $cards->get()->toArray()), 200);

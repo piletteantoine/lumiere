@@ -15,26 +15,14 @@
     @endforeach
     @endif
     <link href="{{ asset('assets/css/style.css?t=' . time() ) }}" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 
-    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
     <script src='http://maps.googleapis.com/maps/api/js?sensor=false&#038;ver=4.0'></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
-    @if( ! is_null( $inline_js ) && ! empty( $inline_js ) )
-    <script type="text/javascript">{{ $inline_js }}</script>
-    @endif
-    @if( ! is_null( $scripts ) && ! empty( $scripts ) )
-    @foreach( $scripts as $script )
-    <script src="{{ $script }}"></script>
-    @endforeach
-    @endif
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
   <body>
     @include('public.parts.menu')
