@@ -297,7 +297,7 @@ main {
   -o-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-  top: 11px;
+  top: 7px;
   right: 9px; }
 
 .fancy-select .trigger:hover {
