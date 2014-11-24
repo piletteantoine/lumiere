@@ -10,17 +10,20 @@
 <div class="wrapper">  
   <div class="secondary-navigation">
     <div class="filter-zone">
-        <p class="headings">Je recherche un 
-            <select>
+        <p class="headings">Je recherche un(e) 
+            <select class="custom-select" id="category-selector">
+                <option value="0">film</option>
             @if( ! is_null( $categories ) && ! empty( $categories ) )
                 @foreach( $categories as $category )
-                <option class="category-selector" data-id="{{ $category->id }}">{{ $category->title }}"></option>
+                <option value="{{ $category->id }}">{{ $category->title }}</option>
                 @endforeach
             @endif
             </select>
             de type
-            <select>
-                <option class="category-selector" data-id="0">Toutes</option>
+            <select class="custom-select" id="type-selector">
+                <option value="0">Indifférent</option>
+                <option value="short">Court-métrage</option>
+                <option value="long">Long-métrage</option>
             </select>
         </p>
     </div>
@@ -63,7 +66,16 @@
   </div>
 </div>
 
-<div class="modal fade" id="slideRight">
+<div class="modal fade right-modal" id="slideRight">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="addCard">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">

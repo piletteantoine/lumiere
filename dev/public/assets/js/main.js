@@ -5,6 +5,7 @@
     var lngtop = 0;
     var latbottom = 0;
     var lngbottom = 0;
+    var movietype = 0;
     
     var map;
     var markers = [];
@@ -95,16 +96,31 @@
         } );
 
         $(document).on('click', '.slideRight', function(e) {
-            e.preventDefault();
+            var $this = $(this);
+            href = $this.attr( 'href' );
 
+            $('#slideRight .modal-body').load(href + ' #content');
             $('#slideRight').modal();
         
             return false;
         } );
 
-        $(document).on('click', '.category-selector', function(e) {
+        $(document).on('click', '.addCard', function(e) {
+            e.preventDefault();
+
+            $('#addCard').modal();
+        
+            return false;
+        } );
+
+        $(document).on('change', '#category-selector', function(e) {
             var $this = $(this);
-            category = $this.data('id');
+            category = $this.val();
+            makeSentence();
+        } );
+        $(document).on('change', '#type-selector', function(e) {
+            var $this = $(this);
+            movietype = $this.val();
             makeSentence();
         } );
 
@@ -237,7 +253,7 @@ $('.custom-select').fancySelect();
 
         sentence += ".";
         $('#sentence').text(sentence);
-
+        console.log(sentence);
         getCards();
     }
 
