@@ -2,33 +2,33 @@
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
 "creatorBuild": "18270",
 "files": {
-	"\/front\/_footer.kit": {
+	"\/_footer.kit": {
 		"fileType": 2048,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/_footer.kit",
-		"outputAbbreviatedPath": "\/front\/_footer.html",
+		"inputAbbreviatedPath": "\/_footer.kit",
+		"outputAbbreviatedPath": "\/_footer.html",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/front\/_header.kit": {
+	"\/_header.kit": {
 		"fileType": 2048,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/_header.kit",
-		"outputAbbreviatedPath": "\/front\/_header.html",
+		"inputAbbreviatedPath": "\/_header.kit",
+		"outputAbbreviatedPath": "\/_header.html",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/front\/assets\/css\/_button.scss": {
+	"\/assets\/css\/_button.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/css\/_button.scss",
-		"outputAbbreviatedPath": "\/front\/assets\/css\/_button.css",
+		"inputAbbreviatedPath": "\/assets\/css\/_button.scss",
+		"outputAbbreviatedPath": "\/assets\/css\/_button.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -36,15 +36,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/front\/assets\/css\/_dragdealer.scss": {
+	"\/assets\/css\/_dragdealer.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/css\/_dragdealer.scss",
-		"outputAbbreviatedPath": "\/front\/assets\/css\/_dragdealer.css",
+		"inputAbbreviatedPath": "\/assets\/css\/_dragdealer.scss",
+		"outputAbbreviatedPath": "\/assets\/css\/_dragdealer.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -52,15 +52,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/front\/assets\/css\/_filter-zone.scss": {
+	"\/assets\/css\/_filter-zone.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/css\/_filter-zone.scss",
-		"outputAbbreviatedPath": "\/front\/assets\/css\/_filter-zone.css",
+		"inputAbbreviatedPath": "\/assets\/css\/_filter-zone.scss",
+		"outputAbbreviatedPath": "\/assets\/css\/_filter-zone.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -68,15 +68,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/front\/assets\/css\/_nav.scss": {
+	"\/assets\/css\/_nav.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/css\/_nav.scss",
-		"outputAbbreviatedPath": "\/front\/assets\/css\/_nav.css",
+		"inputAbbreviatedPath": "\/assets\/css\/_nav.scss",
+		"outputAbbreviatedPath": "\/assets\/css\/_nav.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -84,15 +84,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/front\/assets\/css\/_second-nav.scss": {
+	"\/assets\/css\/_second-nav.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/css\/_second-nav.scss",
-		"outputAbbreviatedPath": "\/front\/assets\/css\/_second-nav.css",
+		"inputAbbreviatedPath": "\/assets\/css\/_second-nav.scss",
+		"outputAbbreviatedPath": "\/assets\/css\/_second-nav.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -100,15 +100,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/front\/assets\/css\/add-ons\/_grid.scss": {
+	"\/assets\/css\/add-ons\/_grid.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/css\/add-ons\/_grid.scss",
-		"outputAbbreviatedPath": "\/front\/assets\/css\/css\/_grid.css",
+		"inputAbbreviatedPath": "\/assets\/css\/add-ons\/_grid.scss",
+		"outputAbbreviatedPath": "\/assets\/css\/css\/_grid.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -116,15 +116,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/front\/assets\/css\/add-ons\/_module-typeset.scss": {
+	"\/assets\/css\/add-ons\/_module-typeset.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/css\/add-ons\/_module-typeset.scss",
-		"outputAbbreviatedPath": "\/front\/assets\/css\/css\/_module-typeset.css",
+		"inputAbbreviatedPath": "\/assets\/css\/add-ons\/_module-typeset.scss",
+		"outputAbbreviatedPath": "\/assets\/css\/css\/_module-typeset.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -132,15 +132,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/front\/assets\/css\/helpers\/_colors.scss": {
+	"\/assets\/css\/helpers\/_colors.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/css\/helpers\/_colors.scss",
-		"outputAbbreviatedPath": "\/front\/assets\/css\/css\/_colors.css",
+		"inputAbbreviatedPath": "\/assets\/css\/helpers\/_colors.scss",
+		"outputAbbreviatedPath": "\/assets\/css\/css\/_colors.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -148,15 +148,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/front\/assets\/css\/helpers\/_font-sizes.scss": {
+	"\/assets\/css\/helpers\/_font-sizes.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/css\/helpers\/_font-sizes.scss",
-		"outputAbbreviatedPath": "\/front\/assets\/css\/css\/_font-sizes.css",
+		"inputAbbreviatedPath": "\/assets\/css\/helpers\/_font-sizes.scss",
+		"outputAbbreviatedPath": "\/assets\/css\/css\/_font-sizes.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -164,15 +164,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/front\/assets\/css\/helpers\/_queries.scss": {
+	"\/assets\/css\/helpers\/_queries.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/css\/helpers\/_queries.scss",
-		"outputAbbreviatedPath": "\/front\/assets\/css\/css\/_queries.css",
+		"inputAbbreviatedPath": "\/assets\/css\/helpers\/_queries.scss",
+		"outputAbbreviatedPath": "\/assets\/css\/css\/_queries.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -180,15 +180,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/front\/assets\/css\/helpers\/_z-index.scss": {
+	"\/assets\/css\/helpers\/_z-index.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/css\/helpers\/_z-index.scss",
-		"outputAbbreviatedPath": "\/front\/assets\/css\/css\/_z-index.css",
+		"inputAbbreviatedPath": "\/assets\/css\/helpers\/_z-index.scss",
+		"outputAbbreviatedPath": "\/assets\/css\/css\/_z-index.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -196,15 +196,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/front\/assets\/css\/libs\/_forms.scss": {
+	"\/assets\/css\/libs\/_forms.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/css\/libs\/_forms.scss",
-		"outputAbbreviatedPath": "\/front\/assets\/css\/css\/_forms.css",
+		"inputAbbreviatedPath": "\/assets\/css\/libs\/_forms.scss",
+		"outputAbbreviatedPath": "\/assets\/css\/css\/_forms.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -212,15 +212,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/front\/assets\/css\/libs\/_gridset.scss": {
+	"\/assets\/css\/libs\/_gridset.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/css\/libs\/_gridset.scss",
-		"outputAbbreviatedPath": "\/front\/assets\/css\/css\/_gridset.css",
+		"inputAbbreviatedPath": "\/assets\/css\/libs\/_gridset.scss",
+		"outputAbbreviatedPath": "\/assets\/css\/css\/_gridset.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -228,15 +228,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/front\/assets\/css\/libs\/_mixins.scss": {
+	"\/assets\/css\/libs\/_mixins.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/css\/libs\/_mixins.scss",
-		"outputAbbreviatedPath": "\/front\/assets\/css\/css\/_mixins.css",
+		"inputAbbreviatedPath": "\/assets\/css\/libs\/_mixins.scss",
+		"outputAbbreviatedPath": "\/assets\/css\/css\/_mixins.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -244,15 +244,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/front\/assets\/css\/libs\/_reset.scss": {
+	"\/assets\/css\/libs\/_reset.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/css\/libs\/_reset.scss",
-		"outputAbbreviatedPath": "\/front\/assets\/css\/css\/_reset.css",
+		"inputAbbreviatedPath": "\/assets\/css\/libs\/_reset.scss",
+		"outputAbbreviatedPath": "\/assets\/css\/css\/_reset.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -260,15 +260,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/front\/assets\/css\/libs\/_second-nav.scss": {
+	"\/assets\/css\/libs\/_second-nav.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/css\/libs\/_second-nav.scss",
-		"outputAbbreviatedPath": "\/front\/assets\/css\/css\/_second-nav.css",
+		"inputAbbreviatedPath": "\/assets\/css\/libs\/_second-nav.scss",
+		"outputAbbreviatedPath": "\/assets\/css\/css\/_second-nav.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -276,15 +276,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/front\/assets\/css\/libs\/_typography.scss": {
+	"\/assets\/css\/libs\/_typography.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/css\/libs\/_typography.scss",
-		"outputAbbreviatedPath": "\/front\/assets\/css\/css\/_typography.css",
+		"inputAbbreviatedPath": "\/assets\/css\/libs\/_typography.scss",
+		"outputAbbreviatedPath": "\/assets\/css\/css\/_typography.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -292,15 +292,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/front\/assets\/css\/libs\/functions\/_functions.scss": {
+	"\/assets\/css\/libs\/functions\/_functions.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/css\/libs\/functions\/_functions.scss",
-		"outputAbbreviatedPath": "\/front\/assets\/css\/libs\/css\/_functions.css",
+		"inputAbbreviatedPath": "\/assets\/css\/libs\/functions\/_functions.scss",
+		"outputAbbreviatedPath": "\/assets\/css\/libs\/css\/_functions.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -308,15 +308,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/front\/assets\/css\/modules\/_map.scss": {
+	"\/assets\/css\/modules\/_map.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/css\/modules\/_map.scss",
-		"outputAbbreviatedPath": "\/front\/assets\/css\/css\/_map.css",
+		"inputAbbreviatedPath": "\/assets\/css\/modules\/_map.scss",
+		"outputAbbreviatedPath": "\/assets\/css\/css\/_map.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -324,24 +324,24 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/front\/assets\/css\/screen.css": {
+	"\/assets\/css\/screen.css": {
 		"fileType": 16,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/css\/screen.css",
+		"inputAbbreviatedPath": "\/assets\/css\/screen.css",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/front\/assets\/css\/screen.scss": {
+	"\/assets\/css\/screen.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/css\/screen.scss",
-		"outputAbbreviatedPath": "\/front\/assets\/css\/screen.css",
+		"inputAbbreviatedPath": "\/assets\/css\/screen.scss",
+		"outputAbbreviatedPath": "\/assets\/css\/screen.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -349,154 +349,143 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/front\/assets\/img\/lumiere-logo.png": {
+	"\/assets\/img\/lumiere-logo.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/img\/lumiere-logo.png",
-		"outputAbbreviatedPath": "\/front\/assets\/img\/lumiere-logo.png",
+		"inputAbbreviatedPath": "\/assets\/img\/lumiere-logo.png",
+		"outputAbbreviatedPath": "\/assets\/img\/lumiere-logo.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/front\/assets\/img\/zoom-0.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 275,
-		"inputAbbreviatedPath": "\/front\/assets\/img\/zoom-0.png",
-		"outputAbbreviatedPath": "\/front\/assets\/img\/zoom-0.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/front\/assets\/img\/zoom-1.png": {
+	"\/assets\/img\/zoom-1.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 1763,
-		"inputAbbreviatedPath": "\/front\/assets\/img\/zoom-1.png",
-		"outputAbbreviatedPath": "\/front\/assets\/img\/zoom-1.png",
+		"inputAbbreviatedPath": "\/assets\/img\/zoom-1.png",
+		"outputAbbreviatedPath": "\/assets\/img\/zoom-1.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/front\/assets\/img\/zoom-2.png": {
+	"\/assets\/img\/zoom-2.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 1143,
-		"inputAbbreviatedPath": "\/front\/assets\/img\/zoom-2.png",
-		"outputAbbreviatedPath": "\/front\/assets\/img\/zoom-2.png",
+		"inputAbbreviatedPath": "\/assets\/img\/zoom-2.png",
+		"outputAbbreviatedPath": "\/assets\/img\/zoom-2.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/front\/assets\/js\/min\/script-min.js": {
+	"\/assets\/js\/min\/script-min.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/js\/min\/script-min.js",
-		"outputAbbreviatedPath": "\/front\/assets\/js\/min\/min\/script-min-min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/min\/script-min.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/min\/script-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/front\/assets\/js\/script.js": {
+	"\/assets\/js\/script.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/js\/script.js",
-		"outputAbbreviatedPath": "\/front\/assets\/js\/min\/script-min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/script.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/script-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/front\/assets\/js\/vendor\/fancy_select.js": {
+	"\/assets\/js\/vendor\/fancy_select.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/js\/vendor\/fancy_select.js",
-		"outputAbbreviatedPath": "\/front\/assets\/js\/vendor\/min\/fancy_select-min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/vendor\/fancy_select.js",
+		"outputAbbreviatedPath": "\/assets\/js\/vendor\/min\/fancy_select-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/front\/assets\/js\/vendor\/gridset-overlay.js": {
+	"\/assets\/js\/vendor\/gridset-overlay.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/js\/vendor\/gridset-overlay.js",
-		"outputAbbreviatedPath": "\/front\/assets\/js\/vendor\/min\/gridset-overlay-min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/vendor\/gridset-overlay.js",
+		"outputAbbreviatedPath": "\/assets\/js\/vendor\/min\/gridset-overlay-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/front\/assets\/js\/vendor\/jquery-2.1.1.min.js": {
+	"\/assets\/js\/vendor\/jquery-2.1.1.min.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/js\/vendor\/jquery-2.1.1.min.js",
-		"outputAbbreviatedPath": "\/front\/assets\/js\/vendor\/min\/jquery-2.1.1.min-min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/vendor\/jquery-2.1.1.min.js",
+		"outputAbbreviatedPath": "\/assets\/js\/vendor\/min\/jquery-2.1.1.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/front\/assets\/js\/vendor\/markerclusterer.js": {
+	"\/assets\/js\/vendor\/markerclusterer.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/js\/vendor\/markerclusterer.js",
-		"outputAbbreviatedPath": "\/front\/assets\/js\/vendor\/min\/markerclusterer-min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/vendor\/markerclusterer.js",
+		"outputAbbreviatedPath": "\/assets\/js\/vendor\/min\/markerclusterer-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/front\/assets\/js\/vendor\/modernizr.js": {
+	"\/assets\/js\/vendor\/modernizr.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/assets\/js\/vendor\/modernizr.js",
-		"outputAbbreviatedPath": "\/front\/assets\/js\/vendor\/min\/modernizr-min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/vendor\/modernizr.js",
+		"outputAbbreviatedPath": "\/assets\/js\/vendor\/min\/modernizr-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/front\/index.html": {
+	"\/index.html": {
 		"fileType": 8192,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/index.html",
+		"inputAbbreviatedPath": "\/index.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/front\/index.kit": {
+	"\/index.kit": {
 		"fileType": 2048,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/index.kit",
-		"outputAbbreviatedPath": "\/front\/index.html",
+		"inputAbbreviatedPath": "\/index.kit",
+		"outputAbbreviatedPath": "\/index.html",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/front\/README.md": {
+	"\/README.md": {
 		"enableFootnoteSupport": 0,
 		"enableSmartyPants": 1,
 		"expandTabs": 1,
 		"fileType": 4096,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/front\/README.md",
-		"outputAbbreviatedPath": "\/front\/README.html",
+		"inputAbbreviatedPath": "\/README.md",
+		"outputAbbreviatedPath": "\/README.html",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		}
