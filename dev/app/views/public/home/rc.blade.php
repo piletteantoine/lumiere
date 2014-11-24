@@ -7,19 +7,53 @@
 
 <div id="google-map" class="map"></div>
 
-<div class="col-md-4">
-    <ul>
-      @if( ! is_null( $categories ) && ! empty( $categories ) )
-        @foreach( $categories as $category )
-        <li><a href="#" class="category-selector" data-id="{{ $category->id }}">{{ $category->title }}</a></li>
-        @endforeach
-        <li><a href="#" class="category-selector" data-id="0">Toutes</a></li>
-      @endif
-    </ul>
+<div class="wrapper">  
+  <div class="secondary-navigation">
+    <div class="filter-zone">
+        <p class="headings">Je recherche un 
+            <select>
+            @if( ! is_null( $categories ) && ! empty( $categories ) )
+                @foreach( $categories as $category )
+                <option class="category-selector" data-id="{{ $category->id }}">{{ $category->title }}"></option>
+                @endforeach
+            @endif
+            </select>
+            de type
+            <select>
+                <option class="category-selector" data-id="0">Toutes</option>
+            </select>
+        </p>
+    </div>
+   </div>
+</div>
 
+<div class="dragdealer">
     <div id="slider"></div>
     <div id="sentence"></div>
 </div>
+
+<!-- <div class="wrapper">   
+    <div class="secondary-navigation">
+        <div class="filter-zone">
+            <p class="headings">Je recherche un 
+                <select class="custom-select">
+                    <option>long métrage</option>
+                    <option>court métrage</option>
+                </select>
+                de type
+                <select class="custom-select">
+                    <option>dramatique</option>
+                    <option>horreur</option>
+                    <option>romantique</option>
+                    <option>fiction</option>
+                    <option>action</option>
+                </select>
+            </p>
+        </div> --><!-- /.filter-zone -->
+        <!-- <button class="filter-validation">valider</button> -->
+<!--     </div>
+</div -->>      
+
 <div class="modal fade" id="ajax">
   <div class="modal-dialog">
     <div class="modal-content">
