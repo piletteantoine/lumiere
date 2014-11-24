@@ -38,17 +38,17 @@
 						<option>long métrage</option>
 						<option>court métrage</option>
 					</select>
-					tourné
+					de type
 					<select class="custom-select">
-						<option>en Belgique</option>
-						<option>au Sénégal</option>
-						<option>au Bénin</option>
-						<option>en Suisse</option>
-						<option>en France</option>
+						<option>dramatique</option>
+						<option>horreur</option>
+						<option>romantique</option>
+						<option>fiction</option>
+						<option>action</option>
 					</select>
 				</p>
 			</div><!-- /.filter-zone -->
-			<button class="filter-validation">valider</button>
+			<!-- <button class="filter-validation">valider</button> -->
 		</div>
 	</div>		
 	<div class="map" id="map"></div>
@@ -69,12 +69,12 @@
 		<script src="assets/js/vendor/gridset-overlay.js"></script>
 		
 		<!-- Map -->
-	 	<script src="http://maps.googleapis.com/maps/api/js?v=3.exp&amp;libraries=places&amp;sensor=false"></script>
-	 	
-	 	<script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/data.json"></script>
-	 	<script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
+  		<script src='assets/js/vendor/require-mapping.js'></script>
+  		<script src='http://maps.google.com/maps/api/js?sensor=true'></script>
 		
 		<!-- Custom JS -->
+		
+		<script src="assets/js/map.js"></script>
 		<script src="assets/js/script.js"></script>
 
 	</body>
