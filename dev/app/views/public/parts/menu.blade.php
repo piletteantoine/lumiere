@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ URL::route('home') }}"><img src="{{ asset('assets/images/logo_Lumière-01.png') }}" alt="" height="40px"></a>
+            <a class="navbar-brand" href="{{ URL::route('home') }}">Lumière</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -19,7 +19,7 @@
                         <span class="glyphicon glyphicon-chevron-down"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="{{ URL::route('public.cards.new') }}">@lang('menu.cards.new')</a></li>
+                        <li><a class="ajax" href="{{ URL::route('public.cards.new') }}">@lang('menu.cards.new')</a></li>
                         <li><a href="{{ URL::route('public.cards.manage') }}">@lang('menu.cards.manage')</a></li>
                         @if( ! is_null( $categories ) && ! empty( $categories ) )
                         <li class="divider"></li>

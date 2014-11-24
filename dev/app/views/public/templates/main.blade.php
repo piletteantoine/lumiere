@@ -9,7 +9,6 @@
     <!-- Bootstrap -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- <link href="{{ asset('assets/css/bootstrap-theme.min.css') }}" rel="stylesheet"> -->
-    <link href="{{ asset('assets/css/bootstrap-flatly.css') }}" rel="stylesheet">
     @if( ! is_null( $styles ) && ! empty( $styles ) )
     @foreach( $styles as $style )
     <link href="{{ $style }}" rel="stylesheet">
@@ -37,27 +36,9 @@
   </head>
   <body>
     @include('public.parts.menu')
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <br>
-                <h1 class="page-header">{{ $content_title }}</h1>
-                <br>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-8">
-                {{ $content }}
-            </div>
-            <div class="col-md-4">
-            @if( is_null( $sidebar ) )
-                @include( 'public.parts.sidebar' )
-            @else
-                {{ $sidebar }}
-            @endif
-            </div>
-        </div>
+    <div id="content">
+        <h1 class="page-header">{{ $content_title }}</h1>
+        {{ $content }}
     </div>
   </body>
 </html>
