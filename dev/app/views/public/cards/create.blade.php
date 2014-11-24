@@ -38,16 +38,7 @@
                 @endif
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="form-group {{ $errors->has('date_production') ? 'has-error has-feedback' : '' }}">
-                <label for="name">@lang('cards.form.labels.date_production')</label>
-                <input type="number" class="form-control" name="date_production" id="date_production" value="{{ date('Y-m-d', time() + 2592000) }}" placeholder="@lang('cards.form.placeholders.date_production')">
-                @if( $errors->has('date_production' ) )
-                <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-                <span class="help-block">{{ $errors->first('date_production') }}</span>
-                @endif
-            </div>
-        </div>
+        <input type="number" class="form-control" name="date_production" id="date_production" value="2000" placeholder="@lang('cards.form.placeholders.date_production')" style="display: none">
         <div class="col-md-4">
             <div class="form-group {{ $errors->has('length') ? 'has-error has-feedback' : '' }}">
                 <label for="name">@lang('cards.form.labels.length')</label>

@@ -38,7 +38,7 @@
                     </a>
                     <ul class="dropdown-menu" role="menu">
                         @foreach( $pages as $index => $page )
-                        <li><a href="{{ URL::route('public.pages.details', ['id' => $page->id]) }}">{{ $page->title }}</a></li>
+                        <li><a class="ajax" href="{{ URL::route('public.pages.details', ['id' => $page->id]) }}">{{ $page->title }}</a></li>
                         @endforeach
                     </ul>
                 </li>
