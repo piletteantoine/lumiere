@@ -5,6 +5,7 @@
     var lngtop = 0;
     var latbottom = 0;
     var lngbottom = 0;
+    var movietype = 0;
     
     var map;
     var markers = [];
@@ -102,9 +103,14 @@
             return false;
         } );
 
-        $(document).on('click', '.category-selector', function(e) {
+        $(document).on('change', '#category-selector', function(e) {
             var $this = $(this);
-            category = $this.data('id');
+            category = $this.val();
+            makeSentence();
+        } );
+        $(document).on('change', '#type-selector', function(e) {
+            var $this = $(this);
+            movietype = $this.val();
             makeSentence();
         } );
 
@@ -234,7 +240,7 @@
 
         sentence += ".";
         $('#sentence').text(sentence);
-
+        console.log(sentence);
         getCards();
     }
 

@@ -29,6 +29,15 @@ class RestController extends \BaseController {
             }
         }
 
+        $movietype = Input::get('movietype', '');
+        if( $movietype != '' && in_array($movietype, array('short', 'long'))){
+            if($movietype == 'short'){
+                $cards->where('length', '<', 30);
+            } else {
+                $cards->where('length', '>', 30);
+            }
+        }        
+
         return Response::json(array('error' => false, 'cards' => $cards->get()->toArray()), 200);
     }
 }
