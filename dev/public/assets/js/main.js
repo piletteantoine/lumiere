@@ -216,8 +216,8 @@
         });
     });
 
-    $('.custom-select').fancySelect();
-
+$('.custom-select').fancySelect();
+    
 
     function makeSentence(){
         var sentence = "Votre recherche actuelle liste les films";
