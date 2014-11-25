@@ -22,7 +22,7 @@
                 <div class="col-xs-6">
                     <div class="form-group {{ $errors->has('published_on_date') ? 'has-error has-feedback' : '' }}">
                         <label for="published_on_date">Date de publication</label>
-                        <input class="form-control" type="number" name="published_on_date" id="published_on_date" value="{{ date('Y-m-d') }}" placeholder="aaaa-mm-dd">
+                        <input class="form-control" type="date" name="published_on_date" id="published_on_date" value="{{ date('Y-m-d') }}" placeholder="aaaa-mm-dd">
                         @if( $errors->has('published_on_date' ) )
                         <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                         <span class="help-block">{{ $errors->first('published_on_date') }}</span>

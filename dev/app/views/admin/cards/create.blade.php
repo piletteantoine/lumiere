@@ -1,3 +1,4 @@
+<h2 class="page-header">Ajout d'une fiche de film</h2>
 @if( Session::has( 'message' ) )
 <div class="alert alert-{{ $errors->has() ? 'danger' : 'success' }} alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Fermer</span></button>
@@ -6,7 +7,6 @@
 @endif
 
 <form action="{{ URL::route('admin.cards.create') }}" method="post">
-    <h4>Ajout d'une fiche de film</h4>
     <div class="row">
         <div class="col-md-12">
             <div class="form-group {{ $errors->has('title') ? 'has-error has-feedback' : '' }}">

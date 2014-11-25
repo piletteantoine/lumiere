@@ -6,7 +6,7 @@ return array(
     'cards' => 'Fiches de film',
     'login' => 'Connexion',
     'register' => 'Inscription',
-    'logout' => 'Déconnexion',
+    'logout' => 'Déco.',
     'profile' => 'Profil',
     'edit_profile' => 'Modifier mon profil',
     'administration' => 'Administration',

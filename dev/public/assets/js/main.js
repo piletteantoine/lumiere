@@ -168,7 +168,8 @@ $('.custom-select').fancySelect();
             getCards();
         });
 
-        if( $('#geolocation_address').length ) {
+        //if( $('#geolocation_address').length ) {
+        {
             var address   = $('#geolocation_address').val();
             var latitude  = $('#geolocation_latitude').val();
             var longitude = $('#geolocation_longitude').val();
@@ -417,7 +418,7 @@ $('.custom-select').fancySelect();
                 })(marker, i));
 
                 // Automatically center the map fitting all markers on the screen
-                map.fitBounds(bounds);
+                if(typeof(map) != 'undefined') map.fitBounds(bounds);
             }
 
              var mcOptions = {
@@ -449,7 +450,7 @@ $('.custom-select').fancySelect();
                     markerCluster.clearMarkers();
                     //markerCluster.setMap(null);
                 }
-                markerCluster = new MarkerClusterer(map, mapMarkers, mcOptions);
+                if(typeof(MarkerClusterer) != 'undefined') markerCluster = new MarkerClusterer(map, mapMarkers, mcOptions);
 
                 google.maps.event.addListener(markerCluster, 'clusterclick', function(cluster) {
                     if(map.getZoom() > 12){

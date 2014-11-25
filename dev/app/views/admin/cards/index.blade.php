@@ -1,6 +1,24 @@
+<h2 class="page-header">Fiches de films</h2>
+
 @if( Session::has('message') )
 <div class="alert alert-info">{{ Session::get('message') }}</div>
 @endif
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#cards').DataTable({
+            'searching': false,
+             "language": {
+                "paginate": {
+                    'first': '<<',
+                    'last': '>>',
+                    'next': '>',
+                    'previous': '<'
+                }
+            }
+        });
+    });
+</script>
 
 <div class="row">
     <div class="col-xs-12">
@@ -15,15 +33,15 @@
 <div class="row">
     <div class="col-xs-12">
         <div class="pull-left">
-            <p><a href="{{ URL::route('admin.cards.new') }}" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> @lang('cards.form.buttons.new')</a></p>
+            <p><a href="{{ URL::route('admin.cards.new') }}" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Ajouter une fiche</a></p>
         </div>
         <div class="pull-right">
             <p>
                 <form action="{{ URL::route('admin.cards') }}" type="get" class="form-inline">
                     <div class="input-group">
-                        <input type="text" class="form-control" name="s" id="s" placeholder="@lang('cards.form.search.placeholder')" value="{{ Input::get('s', '') }}">
+                        <input type="text" class="form-control" name="s" id="s" placeholder="Terme de recherche" value="{{ Input::get('s', '') }}">
                         <span class="input-group-btn">
-                            <button class="btn btn-primary"><i class="glyphicon glyphicon-search"></i> @lang('cards.form.search.button')</button>
+                            <button class="btn btn-primary"><i class="glyphicon glyphicon-search"></i> Rechercher</button>
                         </span>
                     </div>
                 </form>
@@ -67,11 +85,3 @@
     @endif
     </tbody>
 </table>
-
-<div class="row">
-    <div class="col-xs-12">
-        <div class="pull-left">
-            <p><a href="{{ URL::route('admin.cards.new') }}" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Ajouter</a></p>
-        </div>
-    </div>
-</div>

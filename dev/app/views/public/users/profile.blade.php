@@ -1,4 +1,4 @@
-<h2>Profile</h2>
+<h2>Mon profil</h2>
 
 @if( Session::has( 'message' ) )
 <div class="alert alert-{{ $errors->has() ? 'danger' : 'success' }} alert-dismissible" role="alert">
@@ -9,7 +9,7 @@
 
 <form action="" method="post" enctype="multipart/form-data">
     <div class="form-group {{ $errors->has('first_name') ? 'has-error has-feedback' : '' }}">
-        <label for="first_name">First name</label>
+        <label for="first_name">Prénom</label>
         <input type="text" class="form-control" name="first_name" id="first_name" value="{{ Input::old('first_name', $user->first_name) }}">
         @if( $errors->has('first_name' ) )
         <span class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -17,7 +17,7 @@
         @endif
     </div>
     <div class="form-group {{ $errors->has('last_name') ? 'has-error has-feedback' : '' }}">
-        <label for="last_name">Last name</label>
+        <label for="last_name">Nom</label>
         <input type="text" class="form-control" name="last_name" id="last_name" value="{{ Input::old('last_name', $user->last_name) }}">
         @if( $errors->has('last_name' ) )
         <span class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -25,7 +25,7 @@
         @endif
     </div>
     <div class="form-group {{ $errors->has('email') ? 'has-error has-feedback' : '' }}">
-        <label for="email">Email address</label>
+        <label for="email">Adresse Email</label>
         <input type="text" class="form-control" name="email" id="email" value="{{ Input::old('email', $user->email) }}">
         @if( $errors->has('email' ) )
         <span class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -33,7 +33,7 @@
         @endif
     </div>
     <div class="form-group {{ $errors->has('password') ? 'has-error has-feedback' : '' }}">
-        <label for="password">Password</label>
+        <label for="password">Mot de passe</label>
         <input type="password" class="form-control" name="password" id="password" value="">
         @if( $errors->has('password' ) )
         <span class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -41,7 +41,7 @@
         @endif
     </div>
     <div class="form-group {{ $errors->has('password_confirm') ? 'has-error has-feedback' : '' }}">
-        <label for="password_confirm">Password confirmation</label>
+        <label for="password_confirm">Confirmation du mot de passe</label>
         <input type="password" class="form-control" name="password_confirm" id="password_confirm" value="">
         @if( $errors->has('password_confirm' ) )
         <span class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -49,7 +49,7 @@
         @endif
     </div>
     <div class="form-group {{ $errors->has('bio') ? 'has-error has-feedback' : '' }}">
-        <label for="bio">Bio</label>
+        <label for="bio">À propos</label>
         <textarea class="form-control" name="bio" id="bio">{{ Input::old('bio', $user->bio) }}</textarea>
         @if( $errors->has('bio' ) )
         <span class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -58,5 +58,5 @@
     </div>
     {{ Form::token() }}
     <button class="btn btn-primary" name="update"><i class="glyphicon glyphicon-ok"></i> Mettre à jour</button>
-    <button type="reset" class="btn">Reset</button>
+    <button type="reset" class="btn">Réinitialiser</button>
 </form>
