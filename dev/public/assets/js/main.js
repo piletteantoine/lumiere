@@ -35,6 +35,8 @@ $('.custom-select').fancySelect();
     var mapOptions = {
         mapTypeId: 'roadmap'
     };
+    var heatmap;
+    var hcData = [];
 
     jQuery( function() {
         var styles = [
@@ -381,7 +383,7 @@ $('.custom-select').fancySelect();
             $.each( data.cards, function( index, element ) {
                 markers.push([element.title, element.location_lat, element.location_long]);
                 cardIDs.push([element.id]);
-                infowindows.push( [ '<h2>' + element.title + '</h2><p>' + element.description + '</p>' ] );
+                infowindows.push( [ '<h2><a class="slideRight" href="/cards/' + element.id + '">' + element.title + '</a></h2><p>' + element.description + '</p>' ] );
             });
 
             // Display multiple markers on a map
@@ -390,6 +392,7 @@ $('.custom-select').fancySelect();
             // Loop through our array of markers & place each one on the map  
             for( i = 0; i < markers.length; i++ ) {
                 var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+                hcData.push(position);
                 bounds.extend(position);
                 marker = new google.maps.Marker({
                     position: position,
@@ -400,7 +403,6 @@ $('.custom-select').fancySelect();
                 mapMarkers.push(marker);
 
                 // Allow each marker to have an info window    
-                var closePopup = document.querySelector(".close-map-popup");
                 google.maps.event.addListener(marker, 'click', (function(marker, i) {
                     return function() {
                         console.log(cardIDs[i]);
@@ -439,6 +441,57 @@ $('.custom-select').fancySelect();
                 }
 
                 var markerCluster = new MarkerClusterer(map, mapMarkers, mcOptions);
+                google.maps.event.addListener(markerCluster, 'clusterclick', function(cluster) {
+                    console.log('clicked on cluster');
+                    if(map.getZoom() > 12){
+                        var clusterMarkers = cluster.getMarkers();
+                        var clusterContent = "<ul>";
+                        var addressPublic = "";
+                        $.each(clusterMarkers, function(){
+                            m = $(this)[0];
+
+                            //console.log(infowindows);
+
+                            var correctIndex = $(mapMarkers).index(this);
+                            console.log(correctIndex);
+                            var content = infowindows[correctIndex];
+                            clusterContent += '<li>' + content + '</li>';
+
+                            $('#slideRight .modal-body').html(clusterContent);
+                            $('#slideRight').modal();
+                        });
+                    }
+                });
+
+
+                var pointArray = new google.maps.MVCArray(hcData);
+
+                heatmap = new google.maps.visualization.HeatmapLayer({
+                    data: pointArray
+                });
+
+                heatmap.setMap(map);
+
+                var gradient = [
+                    'rgba(15, 15, 15, 0)',
+                    'rgba(35, 35, 35, 0.8)',
+                    'rgba(55, 55, 55, 0.8)',
+                    'rgba(75, 75, 75, 0.8)',
+                    'rgba(95, 95, 95, 0.8)',
+                    'rgba(105, 105, 105, 0.8)',
+                    'rgba(115, 115, 115, 0.8)',
+                    'rgba(135, 135, 135, 0.8)',
+                    'rgba(155, 155, 155, 0.8)',
+                    'rgba(175, 175, 175, 0.8)',
+                    'rgba(195, 195, 195, 0.8)',
+                    'rgba(215, 215, 215, 0.8)',
+                    'rgba(235, 235, 235, 0.8)',
+                    'rgba(255, 255, 255, 1)',
+                ];
+
+                heatmap.set('gradient', gradient);
+                heatmap.set('radius', 40);
+
 
             console.log(mapMarkers.length);
 
