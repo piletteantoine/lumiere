@@ -94,43 +94,49 @@
         </div>
     </div>
     <hr>
-    <h4>Localisation associée</h4>
+    <h4>Géolocalisation</h4>
     <div class="row">
         <div class="col-md-6">
-            <div class="form-group {{ $errors->has('adress_street') ? 'has-error has-feedback' : '' }}">
-                <label for="name">Adresse</label>
-                <input type="text" class="form-control" name="adress_street" id="adress_street" value="{{ Input::old('adress_street') }}" placeholder="Adresse réelle, textuelle">
-                @if( $errors->has('adress_street' ) )
-                <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-                <span class="help-block">{{ $errors->first('adress_street') }}</span>
-                @endif
+            <div class="form-group">
+             <label for="geolocation_address">Lieu textuel</label>
+                <input type="text" class="geolocation" data-name="geolocation" name="geolocation_address" id="geolocation_address" value="{{ Input::old('location') }}">
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <div class="form-group {{ $errors->has('latitude') ? 'has-error has-feedback' : '' }}">
-                        <label for="name">Latitude</label>
-                        <input type="text" class="form-control" name="latitude" id="latitude" value="{{ Input::old('latitude') }}" placeholder="Latitude Google Maps">
-                        @if( $errors->has('latitude' ) )
-                        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-                        <span class="help-block">{{ $errors->first('latitude') }}</span>
-                        @endif
+                    <div class="form-group">
+                        <input type="hidden" name="geolocation_latitude" id="geolocation_latitude" value="{{ Input::old('location_lat') }}">
+                        <input type="text" disabled="disabled" name="geolocation_latitude_shown" id="geolocation_latitude_shown" value="{{ Input::old('location_lat') }}">
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="form-group {{ $errors->has('longitude') ? 'has-error has-feedback' : '' }}">
-                        <label for="name">Longitude</label>
-                        <input type="text" class="form-control" name="longitude" id="longitude" value="{{ Input::old('longitude') }}" placeholder="Longitude Google Maps">
-                        @if( $errors->has('longitude' ) )
-                        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-                        <span class="help-block">{{ $errors->first('longitude') }}</span>
-                        @endif
+                    <div class="form-group">
+                        <input type="hidden" name="geolocation_longitude" id="geolocation_longitude" value="{{ Input::old('location_long') }}">
+                        <input type="text" disabled="disabled" name="geolocation_longitude_shown" id="geolocation_longitude_shown" value="{{ Input::old('location_long') }}">
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <div class="google-map"></div>
+        <div class="col-md-6 map-wrap">
+            <div class="row">
+                <div id="geolocation-google-map" style="height: 240px; width: 240px"></div>
+            </div>
+            <div class="row" id="geolocation-new-coordinates" style="display: none;">
+                <label>Nouvelles coordonnées ?</label>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input type="text" disabled="disabled" id="geolocation_new_latitude" autocomplete="false">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input type="text" disabled="disabled" id="geolocation_new_longitude" autocomplete="false">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#" class="button button-primary" id="geolocation-use-new" title="Nouvelles coordonnées">Utiliser</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

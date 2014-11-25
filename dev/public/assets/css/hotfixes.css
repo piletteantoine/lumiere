@@ -15,7 +15,7 @@ input[type="file"]{
 	background-color: #333;
 	border-color: #000;
 }
-	.btn-primary:hover, .btn-primary:active{
+	.btn-primary:hover, .btn-primary:active, .btn-primary:focus{
 		background: #444;
 		border-color: #000;
 	}
@@ -92,4 +92,12 @@ thead th{
 
 .dataTables_paginate{
 	padding-bottom: 40px
+}
+
+.well-lg{
+	border-radius: 0;
+}
+
+.modal-body #content-page{
+	color: #fff;
 }
