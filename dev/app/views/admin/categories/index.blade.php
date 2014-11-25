@@ -1,4 +1,4 @@
-<h2 class="page-header">@lang('admin/categories.title')</h2>
+<h2 class="page-header">Catégories</h2>
 
 @if( Session::has('message') )
 <div class="alert alert-info">{{ Session::get('message') }}</div>
@@ -8,7 +8,7 @@
     <div class="col-xs-12">
         @if( Input::get('s', '') != '' )
         <div class="pull-left">
-            <h4>@lang('admin/categories.search.title', [ 'search' => Input::get('s') ])</h4>
+            <h4>Recherche : {{ Input::get('s') }}</h4>
         </div>
         @endif
     </div>
@@ -17,15 +17,15 @@
 <div class="row">
     <div class="col-xs-12">
         <div class="pull-left">
-            <p><a href="{{ URL::route('admin.categories.new') }}" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> @lang('admin/categories.form.buttons.new')</a></p>
+            <p><a href="{{ URL::route('admin.categories.new') }}" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Nouvelle catégorie</a></p>
         </div>
         <div class="pull-right">
             <p>
                 <form action="{{ URL::route('admin.pages') }}" type="get" class="form-inline">
                     <div class="input-group">
-                        <input type="text" class="form-control" name="s" id="s" placeholder="@lang('admin/categories.form.search.placeholder')" value="{{ Input::get('s', '') }}">
+                        <input type="text" class="form-control" name="s" id="s" placeholder="Rechercher" value="{{ Input::get('s', '') }}">
                         <span class="input-group-btn">
-                            <button class="btn btn-primary"><i class="glyphicon glyphicon-search"></i> @lang('admin/categories.form.search.button')</button>
+                            <button class="btn btn-primary"><i class="glyphicon glyphicon-search"></i> Rechercher</button>
                         </span>
                     </div>
                 </form>
@@ -37,9 +37,9 @@
 <table id="pages" class="table table-striped table-hover table-bordered">
     <thead>
         <tr>
-            <th>@lang('admin/categories.title')</th>
-            <th>@lang('admin/categories.description')</th>
-            <th>@lang('app.actions')</th>
+            <th>Titre</th>
+            <th>Description</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -51,8 +51,8 @@
             <td>
                 <form action="{{ URL::route('admin.categories.delete', [$category->id]) }}" method="post">
                     <div class="btn-group btn-group-block">
-                        <a href="{{ URL::route('admin.categories.edit', [$category->id]) }}" class="btn btn-primary btn-sm btn-col-4"><i class="glyphicon glyphicon-edit"></i> <span class="hidden-xs">@lang('admin/categories.form.buttons.edit')</span></a>
-                        <button class="btn btn-danger btn-sm btn-col-4"><i class="glyphicon glyphicon-trash"></i> <span class="hidden-xs">@lang('admin/categories.form.buttons.remove')</span></button>
+                        <a href="{{ URL::route('admin.categories.edit', [$category->id]) }}" class="btn btn-primary btn-sm btn-col-4"><i class="glyphicon glyphicon-edit"></i> <span class="hidden-xs">Modifier</span></a>
+                        <button class="btn btn-danger btn-sm btn-col-4"><i class="glyphicon glyphicon-trash"></i> <span class="hidden-xs">Supprimer</span></button>
                     </div>
                 </form>
             </td>
@@ -60,7 +60,7 @@
         @endforeach
     @else
         <tr class="danger">
-            <td colspan="4">@lang('admin/categories.empty')</td>
+            <td colspan="4">Aucune catégorie</td>
         </tr>
     @endif
     </tbody>
@@ -68,7 +68,7 @@
         <tr>
             <th colspan="4">
                 @if( count( $categories ) > 0 )
-                    @lang('admin/categories.count', ['count'=>count($categories)])
+                    {{ count($categories) }} catégories dans la base de données.
                 @endif
             </th>
         </tr>
@@ -78,7 +78,7 @@
 <div class="row">
     <div class="col-xs-12">
         <div class="pull-left">
-            <p><a href="{{ URL::route('admin.categories.new') }}" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> @lang('admin/categories.form.buttons.new')</a></p>
+            <p><a href="{{ URL::route('admin.categories.new') }}" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Ajouter</a></p>
         </div>
     </div>
 </div>

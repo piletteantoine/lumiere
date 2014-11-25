@@ -11,24 +11,24 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li {{ $route_parent == 'admin/home' ? 'class="active"' : '' }}><a href="{{ URL::route('admin.home') }}">@lang('admin/menu.home')</a></li>
+                <li {{ $route_parent == 'admin/home' ? 'class="active"' : '' }}><a href="{{ URL::route('admin.home') }}">Admin.</a></li>
                 <li class="dropdown {{ $route_parent == 'admin/pages' ? 'active' : '' }}">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="{{ URL::route('admin.pages') }}">@lang('admin/menu.pages') <span class="caret"></span></a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="{{ URL::route('admin.pages') }}">Pages <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="{{ URL::route('admin.pages') }}">@lang('admin/menu.pages.list')</a></li>
-                        <li><a href="{{ URL::route('admin.pages.new') }}">@lang('admin/menu.pages.new')</a></li>
+                        <li><a href="{{ URL::route('admin.pages') }}">Liste des pages</a></li>
+                        <li><a href="{{ URL::route('admin.pages.new') }}">Nouvelle page</a></li>
                     </ul>
                 </li>
                 <li class="dropdown {{ $route_parent == 'admin/cards' ? 'active' : '' }}">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="{{ URL::route('admin.cards') }}">@lang('admin/menu.cards') <span class="caret"></span></a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="{{ URL::route('admin.cards') }}">Fiches <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="{{ URL::route('admin.cards') }}">@lang('admin/menu.cards.list')</a></li>
-                        <li><a href="{{ URL::route('admin.cards.new') }}">@lang('admin/menu.cards.new')</a></li>
+                        <li><a href="{{ URL::route('admin.cards') }}">Liste des fiches</a></li>
+                        <li><a href="{{ URL::route('admin.cards.new') }}">Nouvelle fiche</a></li>
                     </ul>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{ URL::route('home') }}">Back to the site</a></li>
+                <li><a href="{{ URL::route('home') }}">Voir le site &rarr;</a></li>
             </ul>
         </div>
     </div>

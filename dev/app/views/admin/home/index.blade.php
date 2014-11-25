@@ -1,1 +1,1 @@
-<h2 class="page-header">@lang('home.admin.title')</h2>
+<h2 class="page-header">Espace d'administration</h2>

@@ -137,12 +137,12 @@ $('.custom-select').fancySelect();
             return false;
         } );
 
-        $(document).on('change', '#category-selector', function(e) {
+        $(document).on('change, change.fs', '#category-selector', function(e) {
             var $this = $(this);
             category = $this.val();
             makeSentence();
         } );
-        $(document).on('change', '#type-selector', function(e) {
+        $(document).on('change, change.fs', '#type-selector', function(e) {
             var $this = $(this);
             movietype = $this.val();
             makeSentence();

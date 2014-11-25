@@ -23,12 +23,6 @@
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{ URL::route('public.cards.new') }}">@lang('menu.cards.new')</a></li>
                             <li><a href="{{ URL::route('public.cards.manage') }}">@lang('menu.cards.manage')</a></li>
-                            @if( ! is_null( $categories ) && ! empty( $categories ) )
-                            <li class="divider"></li>
-                                @foreach( $categories as $category )
-                                <li><a href="{{ URL::route('public.categories.details', [ 'id' => $category->id ]) }}">{{ $category->title }}</a></li>
-                                @endforeach
-                            @endif
                         </ul>
                     </li>
                     @endif
