@@ -1,8 +1,11 @@
 .right-modal .modal-content{
-	max-width: $fs*45;
+	max-width: $fs*37;
 	position: absolute;
 	top: 0;
 	right: 0;
+	background-color: $brand_color_tertiary;
+	// -webkit-transform: translate3d(100%, 0, 0);
+	// transform: translate3d(100%, 0, 0);
 	margin: 0;
 }
 
@@ -11,12 +14,20 @@
 	display: none;
 }
 
+.modal-content{
+	border-radius: 1px;
+}
+
+.right-modal .modal-body{
+	padding: 0;
+	border: none;
+}
 .right-modal h2{
 	text-align: center;
 	margin-bottom: 1rem;
 	font-size: 25px;
 	line-height: 37.5px;
-	font-size: 2.5rem;
+	font-size: 2.3rem;
 	line-height: 3.75rem;
 	padding: .6em 2em .6em 2em;
 	position: absolute;
@@ -24,10 +35,11 @@
 	background: white;
 	text-align: center;
 	display: block;
-	top: $fs*27.5;
+	color: $brand_color_tertiary;
+	top: $fs*26.5;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	box-shadow: rgba(0,0,0,0.1) 10px 10px 40px;
+	box-shadow: rgba(0,0,0,0.2) 10px 10px 40px;
 }
 
 .right-modal h4{
@@ -36,30 +48,102 @@
 }
 
 .right-modal p{
-	margin-top: $fs*4;
+	margin-top: $fs*6;
 }
 
-.row p{
+.right-modal .row p{
 	margin: 0;
+	color: $white;
 }
 
-.row{
+.right-modal .row{
 	margin-right: 0;
 	margin-left: 0;
 }
 
-.col-md-12{
+.right-modal .col-md-12 h4{
+	@include fontsize(1.3);
+	text-transform: uppercase;
+	text-spacing: 1px;
+	text-align: left;
+}
+
+.right-modal .col-md-12 h4{
+	color: $white;
+	padding-bottom: $fs*.5;
+}
+
+
+.right-modal .text-left strong{
+	@include fontsize(1.4);
+	padding-bottom: $fs*.6;
+	border-bottom: 2px solid white;
+}
+
+.right-modal #content{
+	overflow: hidden;
+}
+
+.right-modal .modal-body{
+	color: $white;
+}
+
+// .right-modal #content div, 
+// .right-modal #content p{
+// 	padding: 0 $fs*2 0 $fs*2;
+// }
+
+.right-modal .col-md-12{
 	padding-left: 0;
 	padding-right: 0;
 }
 
-.text-left strong{
-	@include fontsize(1.7);
-	padding-bottom: $fs*.6;
-	border-bottom: 2px solid $white; 
+
+.right-modal #content p{
+	@include fontsize(1.4);
 }
 
+.right-modal ul{
+	padding-bottom: $fs*5;
+}
 
+.right-modal ul li{
+	list-style: none;
+}
+
+.right-modal ul li:last-of-type{
+	padding-top: $fs*2;
+	@include fontsize(1.2);
+}
+
+.right-modal ul li:last-of-type a{
+	color: $white;
+	padding-bottom: $fs;
+	border-bottom: 2px solid $white
+}
+
+.right-modal .row .col-md-12{
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.right-modal .sidebar-container{
+	margin: 2em;
+}
+
+.right-modal .pull-left{
+	padding: $fs*1.5 0 $fs*1.5 0;
+} 
+
+.right-modal .ajax{
+	color: $white;
+	padding: $fs*.6 $fs $fs*.8 $fs;
+	border: 2px solid $black;
+	border: 2px solid white;
+	@include fontsize(1.2);
+	vertical-align: inherit;
+
+}
 
 // .modal.fade:not(.in).right .modal-dialog {
 // 	-webkit-transform: translate3d(125%, 0, 0);

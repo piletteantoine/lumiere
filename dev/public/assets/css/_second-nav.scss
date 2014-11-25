@@ -1,11 +1,11 @@
 .secondary-navigation{
 	position: absolute;
 	left: 50%;
-	min-width: 70%;
+	min-width: 60%;
   	top: $fs*12;
   	background-color: $white;
 	transform: translate(-50%, -50%);
-	padding: $fs*2.3 $fs*3 $fs*1.7 $fs*3;
+	padding: $fs*2 $fs*1.7 $fs*1.5 $fs*1.7;
 	text-align: center;
 	z-index: $z-map-ui;
 	box-shadow: rgba(255,255,255,0.1) $fs*1 $fs*1 $fs*4;

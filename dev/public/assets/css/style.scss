@@ -61,6 +61,10 @@ h1,h2, p, a, li a,label,div,span,q,blockquote,button,input {
   -ms-font-smoothing: antialiased;
 }
 
+textarea:focus, input:focus{
+    outline: 0;
+}
+
 main{
 	position: relative;
 	height: 100%;

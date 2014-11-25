@@ -89,7 +89,7 @@
                 zoomControl: true,
                 mapTypeControl: 0,
                 maxZoom: 13,
-                scaleControl: true,
+                scaleControl: 0,
                 streetViewControl: 0,
                 'styles': styles,
                 overviewMapControl: 0
@@ -255,17 +255,17 @@
         });
     });
 
-    function handleResize() {
-    var h = $(window).height();
-            $('.modal-content').css({'height':h+'px'});
-    }
-    $(function(){
-            handleResize();
+    // function handleResize() {
+    // var h = $(window).height();
+    //         $('.modal-content').css({'height':h+'px'});
+    // }
+    // $(function(){
+    //         handleResize();
 
-            $(window).resize(function(){
-            handleResize();
-        });
-    });
+    //         $(window).resize(function(){
+    //         handleResize();
+    //     });
+    // });
 
     //$('.custom-select').fancySelect();
 
@@ -471,7 +471,7 @@
                     google.maps.event.addListener(markerCluster, 'clusterclick', function(cluster) {
                         if(map.getZoom() > 12){
                             var clusterMarkers = cluster.getMarkers();
-                            var clusterContent = "<ul>";
+                            var clusterContent = "<ul class='itemmultipl'>";
                             var addressPublic = "";
                             $.each(clusterMarkers, function(){
                                 m = $(this)[0];
