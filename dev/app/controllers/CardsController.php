@@ -16,6 +16,7 @@ class CardsController extends BaseController {
      */
     public function showDetails($id) {
         $card = Card::find($id);
+        $collaborators = Collaborator::where('movie', '=', $id);
 
         // If no item in database
         if(empty($card) || empty($card->id))
@@ -26,6 +27,7 @@ class CardsController extends BaseController {
 
         $this->layout->content = View::make('public.cards.details');
         $this->layout->content->card = $card;
+        $this->layout->content->collaborators = $collaborators->get();
         $this->layout->content->author = $author;
         $this->layout->content_title = $card->title;
     }
@@ -223,7 +225,7 @@ class CardsController extends BaseController {
         $cards->orderBy('id', 'desc');
 
         $this->layout->content = View::make('public.cards.manage');
-        $this->layout->content->cards = $cards->get();;
+        $this->layout->content->cards = $cards->get();
         $this->layout->content_title = Lang::get('cards.manage.title');
     }
 }

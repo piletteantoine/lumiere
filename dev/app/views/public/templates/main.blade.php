@@ -50,7 +50,6 @@
       </div>
     </div>
 
-
     <div class="modal fade right-modal" id="cluster">
       <div class="modal-dialog">
         <div class="modal-content">
