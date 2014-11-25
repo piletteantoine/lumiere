@@ -94,7 +94,7 @@ $('.custom-select').fancySelect();
 
         var latlng = new google.maps.LatLng( 50.833, 4.333 );
         map = new google.maps.Map( document.getElementById( 'google-map' ), {
-            zoom: 3,
+            zoom: 1,
             center: latlng,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             panControl: 0,
