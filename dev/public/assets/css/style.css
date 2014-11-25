@@ -565,6 +565,10 @@ main {
     background-color: #ffffff;
     color: #121212 !important; }
 
+.modal.fade:not(.in).right .modal-dialog {
+  -webkit-transform: translate3d(125%, 0, 0);
+  transform: translate3d(125%, 0, 0); }
+
 .modal-content {
   background: black;
   border: 2px solid white;

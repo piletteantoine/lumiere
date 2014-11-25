@@ -407,6 +407,12 @@ $('.custom-select').fancySelect();
                         href = "/cards/" + cardIDs[i];
                         $('#slideRight .modal-body').load(href + ' #content');
                         $('#slideRight').modal();
+                        $('.modal')
+                                .prop('class', 'modal fade') // revert to default
+                            $('.modal').modal('show');
+                        // $('#slideRight').removeClass('fade');
+                        // $('#slideRight').toggleClass('slideRight-open')
+                        
                     }
                 })(marker, i));
 
@@ -426,15 +432,15 @@ $('.custom-select').fancySelect();
                        width: 56
                    }, {
                        height: 66,
-                       url: "http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/images/m3.png",
+                       url: "assets/img/zoom-3.png",
                        width: 66
                    }, {
                        height: 78,
-                       url: "http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/images/m4.png",
+                       url: "assets/img/zoom-4.png",
                        width: 78
                    }, {
                        height: 90,
-                       url: "http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/images/m5.png",
+                       url: "assets/img/zoom-5.png",
                        width: 90
                    }]
                 }
@@ -475,19 +481,19 @@ $('.custom-select').fancySelect();
                 heatmap.setMap(map);
 
                 var gradient = [
-                    'rgba(15, 15, 15, 0)',
-                    'rgba(35, 35, 35, 0.8)',
-                    'rgba(55, 55, 55, 0.8)',
-                    'rgba(75, 75, 75, 0.8)',
-                    'rgba(95, 95, 95, 0.8)',
-                    'rgba(105, 105, 105, 0.8)',
-                    'rgba(115, 115, 115, 0.8)',
-                    'rgba(135, 135, 135, 0.8)',
-                    'rgba(155, 155, 155, 0.8)',
-                    'rgba(175, 175, 175, 0.8)',
-                    'rgba(195, 195, 195, 0.8)',
-                    'rgba(215, 215, 215, 0.8)',
+                    'rgba(170, 170, 170, 0)',
+                    'rgba(175, 175, 175, 0.1)',
+                    'rgba(180, 180, 180, 0.2)',
+                    'rgba(185, 185, 185, 0.2)',
+                    'rgba(190, 190, 190, 0.3)',
+                    'rgba(195, 195, 195, 0.3)',
+                    'rgba(200, 200, 200, 0.3)',
+                    'rgba(215, 215, 215, 0.4)',
+                    'rgba(220, 220, 220, 0.5)',
+                    'rgba(225, 225, 225, 0.6)',
+                    'rgba(230, 230, 230, 0.7)',
                     'rgba(235, 235, 235, 0.8)',
+                    'rgba(245, 245, 245, 0.9)',
                     'rgba(255, 255, 255, 1)',
                 ];
 

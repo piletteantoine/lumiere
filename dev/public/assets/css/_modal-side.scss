@@ -1,0 +1,46 @@
+.modal.fade:not(.in).right .modal-dialog {
+	-webkit-transform: translate3d(125%, 0, 0);
+	transform: translate3d(125%, 0, 0);
+}
+// .modal{
+// 	transform: translate3d(100%, 0, 0);
+// }
+// .slideRight-open{
+// 	-webkit-transform: translate3d(10%, 0, 0);
+// 	transform: translate3d(10%, 0, 0);
+// 	@include transition(all, .7s, ease-in-out);
+// }
+
+// #slideRight {
+// 	-webkit-transform: translate3d(35%, 0, 0);
+// 	transform: translate3d(35%, 0, 0);
+// 	-webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+// 	   -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+// 	     -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+// 	        transition: opacity 0.3s linear, right 0.3s ease-out;	
+// .modal.fade {
+//   left: -25%;
+//   -webkit-transition: opacity 0.3s linear, left 0.3s ease-out!important;
+//      -moz-transition: opacity 0.3s linear, left 0.3s ease-out!important;
+//        -o-transition: opacity 0.3s linear, left 0.3s ease-out!important;
+//           transition: opacity 0.3s linear, left 0.3s ease-out!important;
+// }
+
+	// -webkit-transition: none;
+	// -moz-transition: none;
+	// -ms-transition: none;
+	// -o-transition: none;
+	// transition: none;
+// }
+
+// .modal.fade:not(.in).right .modal-dialog {
+// 	-webkit-transform: translate3d(125%, 0, 0);
+// 	transform: translate3d(125%, 0, 0);
+// }
+
+// .modal.fade {
+//   -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+//      -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+//        -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+//           transition: opacity 0.3s linear, right 0.3s ease-out;
+// }
