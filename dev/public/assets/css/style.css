@@ -143,6 +143,9 @@ main {
   margin-right: 4rem;
   height: auto; }
 
+.modal-content .modal-body #content img:last-of-type {
+  display: none; }
+
 .glyphicon {
   display: none; }
 
@@ -218,7 +221,7 @@ main {
   position: absolute;
   left: 50%;
   min-width: 70%;
-  top: 3rem;
+  top: 12rem;
   background-color: #ffffff;
   transform: translate(-50%, -50%);
   padding: 2.3rem 3rem 1.7rem 3rem;
@@ -600,7 +603,7 @@ main {
   transform: translate3d(125%, 0, 0); }
 
 .modal-content {
-  background: #ffffff;
+  background: #f6f6f6;
   border-radius: 1px; }
 
 .form-group {

@@ -103,6 +103,16 @@
 
             $('#ajax .modal-body').load(href + ' #content');
             $('#ajax').modal();
+            $(this).animate({
+                    left: '-50%'
+                }, 500, function() {
+                    $(this).css('left', '150%');
+                    $(this).appendTo('#container');
+                });
+
+                $(this).next().animate({
+                    left: '50%'
+                }, 500);
         
             return false;
         } );
@@ -113,6 +123,16 @@
 
             $('#slideRight .modal-body').load(href + ' #content');
             $('#slideRight').modal();
+            $('#slideRight').animate({
+                    left: '-50%'
+                }, 500, function() {
+                    $('#slideRight').css('left', '150%');
+                    $('#slideRight').appendTo('#container');
+                });
+
+                $('#slideRight').next().animate({
+                    left: '50%'
+                }, 500);
         
             return false;
         } );
@@ -232,6 +252,18 @@
 
         $(function() {
             makeSingleSlider();
+        });
+    });
+
+    function handleResize() {
+    var h = $('#google-map').outerHeight();
+            $('.modal-content').css({'height':h+'px'});
+    }
+    $(function(){
+            handleResize();
+
+            $(window).resize(function(){
+            handleResize();
         });
     });
 
