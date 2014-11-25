@@ -155,7 +155,7 @@ main {
   letter-spacing: 2px; }
 
 .navbar-inverse {
-  background-color: transparent;
+  background-color: black;
   border-color: transparent; }
 
 .navbar-inverse .navbar-nav > .active > a {
@@ -579,8 +579,11 @@ main {
   background-color: #000000;
   border: none; }
 
-.from-group label[for="first_name"] {
-  color: #ffffff; }
+.form-group label {
+  color: #ffffff;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
 
 .modal-body h2 {
   color: #ffffff;

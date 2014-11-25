@@ -15,8 +15,11 @@ border-bottom: 1px solid white;
 	border: none;
 }
 
-.from-group label[for="first_name"]{
+.form-group label{
 	color: $white;
+	font-size: $fs;
+	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 
 .modal-body h2{
