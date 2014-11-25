@@ -7,24 +7,24 @@ input[type="file"]{
 	height: 33px;	
 }
 
-/*.btn {
+.btn {
 	border: 2px solid #000;
 }
 .btn-primary {
 	color: #FFF;
 	background-color: #333;
 	border-color: #000;
-}*/
-	.btn-primary:hover, .btn-primary:active, .btn-primary:focus{
-		background: #444;
-		border-color: #000;
-	}
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus{
+	background: #444;
+	border-color: #000;
+}
 
 .modal-body h4{
 	font-family: RealText-Regular, helvetica, arial, sans-serif;
 	display: block;
-/*	font-size: 25px;
-	line-height: 1.2;*/
+	font-size: 25px;
+	line-height: 1.2;
 	color: #fff;
 }
 
@@ -100,4 +100,61 @@ thead th{
 
 .modal-body #content-page{
 	color: #fff;
+}
+
+.modal-body{
+	border: 2px solid white;
+	hr{
+		display: none;
+	}
+
+}
+
+.modal-body h4{
+	text-align: center;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+
+.modal-body input{
+	background-color: transparent;
+	border: none;
+	outline: none;
+	-webkit-outline: none;
+}
+.modal-body textarea{
+	background-color: transparent;
+	border: none;
+}
+.modal-content{
+	max-width: 600px;
+	margin: 0 auto;
+	background-color: black;
+}
+
+.form-group label{
+	color: white;
+	text-transform: uppercase;
+	font-size: 11px;
+	letter-spacing: 1px;
+}
+
+.form-group{
+	border-bottom: 1px solid white;
+}
+
+.form-group:nth-of-type(5){
+	border-bottom: 1px solid transparent;
+}
+
+.form-group input[placeholder]{
+	color: white;
+}
+select .form-control {
+	max-width: 30%;
+}
+
+.col-md-4{
+	width: 50%;
 }

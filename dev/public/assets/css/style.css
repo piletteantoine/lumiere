@@ -102,6 +102,9 @@ h1, h2, p, a, li a, label, div, span, q, blockquote, button, input {
   -moz-font-smoothing: antialiased;
   -ms-font-smoothing: antialiased; }
 
+textarea:focus, input:focus {
+  outline: 0; }
+
 main {
   position: relative;
   height: 100%; }
@@ -220,11 +223,11 @@ main {
 .secondary-navigation {
   position: absolute;
   left: 50%;
-  min-width: 70%;
+  min-width: 60%;
   top: 12rem;
   background-color: #ffffff;
   transform: translate(-50%, -50%);
-  padding: 2.3rem 3rem 1.7rem 3rem;
+  padding: 2rem 1.7rem 1.5rem 1.7rem;
   text-align: center;
   z-index: 20;
   box-shadow: rgba(255, 255, 255, 0.1) 1rem 1rem 4rem;
@@ -257,21 +260,21 @@ main {
   transition: all 500ms ease-out; }
 
 .filter-zone p {
-  font-size: 25px;
-  line-height: 24px;
-  font-size: 2.5rem;
-  line-height: 2.4rem; }
+  font-size: 24px;
+  line-height: 23px;
+  font-size: 2.4rem;
+  line-height: 2.3rem; }
   @media only screen and (max-width: 1024px) {
     .filter-zone p {
-      font-size: 22px;
+      font-size: 21px;
       line-height: 17px;
-      font-size: 2.2rem;
+      font-size: 2.1rem;
       line-height: 1.7rem; } }
   @media only screen and (max-width: 780px) {
     .filter-zone p {
-      font-size: 20px;
+      font-size: 19px;
       line-height: 40px;
-      font-size: 2rem;
+      font-size: 1.9rem;
       line-height: 4rem; } }
 
 .filter-zone .fancy-select {
@@ -591,27 +594,35 @@ main {
   border: 2px solid #121212; }
 
 .btn-primary {
-  margin-right: 4rem;
+  margin-right: 1rem;
   border: 2px solid #ffffff;
   background-color: transparent; }
 
 .right-modal .modal-content {
-  max-width: 45rem;
+  max-width: 37rem;
   position: absolute;
   top: 0;
   right: 0;
+  background-color: #a8a59e;
   margin: 0; }
 
 .right-modal h1 {
   font: 0/0 a;
   display: none; }
 
+.modal-content {
+  border-radius: 1px; }
+
+.right-modal .modal-body {
+  padding: 0;
+  border: none; }
+
 .right-modal h2 {
   text-align: center;
   margin-bottom: 1rem;
   font-size: 25px;
   line-height: 37.5px;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   line-height: 3.75rem;
   padding: .6em 2em .6em 2em;
   position: absolute;
@@ -619,10 +630,11 @@ main {
   background: white;
   text-align: center;
   display: block;
-  top: 27.5rem;
+  color: #a8a59e;
+  top: 26.5rem;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: rgba(0, 0, 0, 0.1) 10px 10px 40px; }
+  box-shadow: rgba(0, 0, 0, 0.2) 10px 10px 40px; }
 
 .right-modal h4 {
   text-transform: uppercase;
@@ -632,68 +644,91 @@ main {
   line-height: 2.4rem; }
 
 .right-modal p {
-  margin-top: 4rem; }
+  margin-top: 6rem; }
 
-.row p {
-  margin: 0; }
+.right-modal .row p {
+  margin: 0;
+  color: #ffffff; }
 
-.row {
+.right-modal .row {
   margin-right: 0;
   margin-left: 0; }
 
-.col-md-12 {
+.right-modal .col-md-12 h4 {
+  font-size: 13px;
+  line-height: 19.5px;
+  font-size: 1.3rem;
+  line-height: 1.95rem;
+  text-transform: uppercase;
+  text-spacing: 1px;
+  text-align: left; }
+
+.right-modal .col-md-12 h4 {
+  color: #ffffff;
+  padding-bottom: 0.5rem; }
+
+.right-modal .text-left strong {
+  font-size: 14px;
+  line-height: 21.0px;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid white; }
+
+.right-modal #content {
+  overflow: hidden; }
+
+.right-modal .modal-body {
+  color: #ffffff; }
+
+.right-modal .col-md-12 {
   padding-left: 0;
   padding-right: 0; }
 
-.text-left strong {
-  font-size: 17px;
-  line-height: 25.5px;
-  font-size: 1.7rem;
-  line-height: 2.55rem;
-  padding-bottom: 0.6rem;
+.right-modal #content p {
+  font-size: 14px;
+  line-height: 21.0px;
+  font-size: 1.4rem;
+  line-height: 2.1rem; }
+
+.right-modal ul {
+  padding-bottom: 5rem; }
+
+.right-modal ul li {
+  list-style: none; }
+
+.right-modal ul li:last-of-type {
+  padding-top: 2rem;
+  font-size: 12px;
+  line-height: 18px;
+  font-size: 1.2rem;
+  line-height: 1.8rem; }
+
+.right-modal ul li:last-of-type a {
+  color: #ffffff;
+  padding-bottom: 1rem;
   border-bottom: 2px solid #ffffff; }
 
-.modal-content {
-  background: #656565;
-  border-radius: 1px; }
+.right-modal .row .col-md-12 {
+  padding-left: 0;
+  padding-right: 0; }
 
-.form-group {
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid white; }
+.right-modal .sidebar-container {
+  margin: 2em; }
 
-.form-group input,
-.form-group textarea {
-  background-color: #000000;
-  border: none; }
+.right-modal .pull-left {
+  padding: 1.5rem 0 1.5rem 0; }
 
-.form-group label {
+.right-modal .ajax {
   color: #ffffff;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px; }
-
-.modal-body h2 {
-  color: #121212;
-  text-align: center;
-  margin-bottom: 1rem;
-  font-size: 25px;
-  line-height: 37.5px;
-  font-size: 2.5rem;
-  line-height: 3.75rem; }
-
-.modal-body p:first-of-type {
-  color: #ffffff;
-  font-size: 14px;
-  line-height: 23px;
-  font-size: 1.4rem;
-  line-height: 2.3rem;
-  padding: 1rem 0 2rem 0; }
-
-.modal-body #content {
-  padding: 1.5rem; }
-  .modal-body #content img {
-    max-width: 100%;
-    min-height: 250px; }
+  padding: 0.6rem 1rem 0.8rem 1rem;
+  border: 2px solid #121212;
+  border: 2px solid white;
+  font-size: 12px;
+  line-height: 18px;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  vertical-align: inherit; }
 
 .page-header {
   font: 0/0 a;

@@ -18,14 +18,14 @@
 }
 
 .filter-zone p {
-	@include fontsize(2.5, 2.4);
+	@include fontsize(2.4, 2.3);
 
 	// Media Queries
 	@include respond-to(medium-screens){
-		@include fontsize(2.2, 1.7);
+		@include fontsize(2.1, 1.7);
 	}
 	@include respond-to(small-screens){
-		@include fontsize(2, 4);
+		@include fontsize(1.9, 4);
 	}	
 }	
 

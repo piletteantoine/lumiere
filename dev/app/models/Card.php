@@ -49,21 +49,21 @@ class Card extends Eloquent {
 		} else {
 			switch( $size ) {
 				case 'medium':
-					return 'http://placehold.it/220x157';
+					return 'http://lorempixel.com/400/200';
 				case 'banner':
-					return 'http://placehold.it/740x249';
+					return 'http://lorempixel.com/400/200';
 			}
 		}
 		return false;
 	}
 
-	public function get_poster($width = 1000, $height = 300) {
+	public function get_poster($width = 400, $height = 200) {
 		$file_url = 'uploads/cards/posters/' . $this->id . '.png';
-		return ( File::exists( $file_url ) ) ? asset(Croppa::url( $file_url, $width, $height )) : 'http://placehold.it/' . $width . 'x' . $height . '/ccc/ccc';
+		return ( File::exists( $file_url ) ) ? asset(Croppa::url( $file_url, $width, $height )) : 'http://lorempixel.com/' . $width . '/' . $height;
 	}
 
 	public function get_thumb($width = 64, $height = 64) {
 		$file_url = 'uploads/cards/thumbs/' . $this->id . '.png';
-		return ( File::exists( $file_url ) ) ? asset(Croppa::url( $file_url, $width, $height )) : 'http://placehold.it/' . $width . 'x' . $height . '/ccc/ccc';
+		return ( File::exists( $file_url ) ) ? asset(Croppa::url( $file_url, $width, $height )) : 'http://lorempixel.com/' . $width . '/' . $height;
 	}
 }
