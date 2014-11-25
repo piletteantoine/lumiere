@@ -73,32 +73,18 @@
 
 #sentence{
 	color: $white;
-	font-size: $fs*1.2;
+	font-size: $fs*1.4;
 	text-align: center;
 	margin-top: $fs*.5;
 	margin-bottom: $fs*.5;
 }
 
-.ui-slider-handle{
-	border: 3px solid #d3d3d3;
-	background: $black;
-	font-weight: normal;
-	outline: none;
-	color: white;
+.dragdealer label{
+	@include fontsize(1);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: $white;
 }
-
-.ui-slider-horizontal .ui-slider-handle{
-	top: -.4em;
-}
-
-.ui-corner-all{
-	border-radius: $fs*2.5;
-}
-
-.ui-widget-content{
-	height: 4px;
-}
-
 
 
 // .dragdealer .handle { // The handle area (invisible)

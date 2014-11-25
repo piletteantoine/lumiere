@@ -260,15 +260,15 @@ $('.custom-select').fancySelect();
                 yearfrom = ui.values[ 0 ];
                 yearto = ui.values[ 1 ];
                 makeSentence();
-                $("#slider").find(".ui-slider-handle").first().text(yearfrom);
-                $("#slider").find(".ui-slider-handle").last().text(yearto);
+                $("#slider").find(".ui-slider-handle").first();
+                $("#slider").find(".ui-slider-handle").last();
               },
               create: function( event, ui ) {
                 yearfrom = 2000;
                 yearto = 2014;
                 makeSentence();
-                $("#slider").find(".ui-slider-handle").first().text(yearfrom);
-                $("#slider").find(".ui-slider-handle").last().text(yearto);
+                $("#slider").find(".ui-slider-handle").first();
+                $("#slider").find(".ui-slider-handle").last();
               }
         });
     }
@@ -283,13 +283,13 @@ $('.custom-select').fancySelect();
                 yearfrom = ui.value;
                 yearto = ui.value;
                 makeSentence();
-                $("#slider").find(".ui-slider-handle").first().text(yearfrom);
+                $("#slider").find(".ui-slider-handle").first();
               },
               create: function( event, ui ) {
                 yearfrom = ui.value;
                 yearto = ui.value;
                 makeSentence();
-                $("#slider").find(".ui-slider-handle").first().text(yearfrom);
+                $("#slider").find(".ui-slider-handle").first();
               }
         });
     }

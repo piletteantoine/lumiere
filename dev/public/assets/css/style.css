@@ -471,7 +471,7 @@ main {
   z-index: 20;
   -webkit-box-shadow: 0 0 30px 0 rgba(19, 19, 19, 0.2);
   box-shadow: 0 0 30px 0 rgba(19, 19, 19, 0.2);
-  padding: 20px;
+  padding: 0 2em 0 2em;
   cursor: ew-resize;
   transform: translateX(-50%); }
 
@@ -516,13 +516,26 @@ main {
   border: 1px solid #dc0336;
   color: #dc0336;
   text-transform: uppercase;
-  padding: 7px 10px;
+  padding: 0.7rem 1rem;
   text-align: center;
   margin-left: 5px;
   -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2); }
 
 #sentence {
+  color: #ffffff;
+  font-size: 1.4rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem; }
+
+.dragdealer label {
+  font-size: 10px;
+  line-height: 15px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   color: #ffffff; }
 
 .btn {
