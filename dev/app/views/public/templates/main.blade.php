@@ -23,7 +23,6 @@
     <script src='http://maps.googleapis.com/maps/api/js?sensor=false&#038;ver=4.0'></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
-    <script src="{{ asset('assets/js/fancy_select.js') }}"></script>
   </head>
   <body>
     @include('public.parts.menu')

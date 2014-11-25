@@ -143,6 +143,9 @@ main {
   margin-right: 4rem;
   height: auto; }
 
+.glyphicon {
+  display: none; }
+
 .navbar-nav > li > a {
   padding: 2.1rem 1.9rem 2.1rem 1.9rem;
   font-size: 13px;
@@ -157,6 +160,59 @@ main {
 
 .navbar-inverse .navbar-nav > .active > a {
   background-color: transparent !important; }
+
+.navbar-right .dropdown .dropdown-toggle strong {
+  border: 2px solid white;
+  background-color: #121212;
+  padding: .7rem 1.3rem;
+  color: white; }
+
+.navbar-right .dropdown .dropdown-toggle {
+  z-index: 1;
+  -webkit-transition: all 0.5 ease-out;
+  -moz-transition: all 0.5 ease-out;
+  -ms-transition: all 0.5 ease-out;
+  -o-transition: all 0.5 ease-out;
+  transition: all 0.5 ease-out; }
+
+.navbar-right .dropdown .dropdown-toggle:after {
+  content: '';
+  width: 8.4rem;
+  height: 3.3rem;
+  position: absolute;
+  border: 2px solid white;
+  padding: .7rem 1.3rem;
+  color: white;
+  z-index: -1;
+  top: 2.2rem;
+  right: 1.4rem; }
+  .navbar-right .dropdown .dropdown-toggle:after:hover {
+    top: 1.6rem;
+    right: 1.9rem; }
+
+.dropdown-menu {
+  width: 250px;
+  border-radius: 1px;
+  -webkit-transition: all 2s ease;
+  -moz-transition: all 2s ease;
+  -ms-transition: all 2s ease;
+  -o-transition: all 2s ease;
+  transition: all 2s ease; }
+
+.col-lg-8 {
+  width: 100%;
+  padding: 0 3rem; }
+
+.text-left a {
+  color: #121212; }
+
+.dropdown:hover .navbar-right .dropdown .dropdown-toggle:after {
+  top: 1.6rem;
+  right: 1.9rem; }
+
+.dropdown-menu .divider {
+  height: 2px;
+  background-color: #4d4d4d; }
 
 .secondary-navigation {
   position: absolute;
@@ -465,6 +521,30 @@ main {
   margin-left: 5px;
   -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2); }
+
+.btn {
+  border-radius: 1px; }
+
+.btn-danger {
+  color: black;
+  background-color: #ffffff;
+  border: solid 2px black;
+  width: 40%; }
+  .btn-danger:hover {
+    -webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    -ms-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+    background-color: black;
+    border: solid 2px black;
+    color: #ffffff; }
+
+.btn-block {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 1rem; }
 
 .filter-validation {
   -webkit-transition: all 0.2s ease-in-out;
