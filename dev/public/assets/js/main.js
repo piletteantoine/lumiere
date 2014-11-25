@@ -16,7 +16,7 @@ console.log('Document ready');
 $('.custom-select').fancySelect();
 
 // ------------------------------------------------------------
-// Jquery Ending
+// Ending Jquery
 // ------------------------------------------------------------
 
 });
@@ -355,7 +355,7 @@ $('.custom-select').fancySelect();
                 });
                 mapMarkers.push(marker);
 
-                
+
                 
                 // Allow each marker to have an info window    
                 google.maps.event.addListener(marker, 'click', (function(marker, i) {
@@ -368,6 +368,32 @@ $('.custom-select').fancySelect();
                 // Automatically center the map fitting all markers on the screen
                 map.fitBounds(bounds);
             }
+
+             var mcOptions = {
+                   styles: [{
+                       height: 40,
+                       url: "assets/img/zoom-1.png",
+                       width: 40
+                   }, {
+                       height: 56,
+                       url: "assets/img/zoom-2.png",
+                       width: 56
+                   }, {
+                       height: 66,
+                       url: "http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/images/m3.png",
+                       width: 66
+                   }, {
+                       height: 78,
+                       url: "http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/images/m4.png",
+                       width: 78
+                   }, {
+                       height: 90,
+                       url: "http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/images/m5.png",
+                       width: 90
+                   }]
+                }
+
+                var markerCluster = new MarkerClusterer(map, mapMarkers, mcOptions);
         });
     }
 
