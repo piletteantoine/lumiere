@@ -37,6 +37,7 @@ $('.custom-select').fancySelect();
     };
     var heatmap;
     var hcData = [];
+    var markerCluster;
 
     jQuery( function() {
         var styles = [
@@ -97,9 +98,10 @@ $('.custom-select').fancySelect();
             center: latlng,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             panControl: 0,
-            zoomControl: 0,
+            zoomControl: true,
             mapTypeControl: 0,
-            scaleControl: 1,
+            maxZoom: 13,
+            scaleControl: true,
             streetViewControl: 0,
             'styles': styles,
             overviewMapControl: 0
@@ -143,7 +145,6 @@ $('.custom-select').fancySelect();
         $(document).on('change', '#type-selector', function(e) {
             var $this = $(this);
             movietype = $this.val();
-            console.log(movietype);
             makeSentence();
         } );
 
@@ -234,7 +235,6 @@ $('.custom-select').fancySelect();
 
         $(document).on("change", "#single-slider", function(e){
             var $this = $(this);
-            console.log($this.is(':checked'));
             if($this.is(':checked')){
                 makeSingleSlider();
             } else {
@@ -267,7 +267,6 @@ $('.custom-select').fancySelect();
                 yearfrom = 2000;
                 yearto = 2014;
                 makeSentence();
-                console.log('test');
                 $("#slider").find(".ui-slider-handle").first().text(yearfrom);
                 $("#slider").find(".ui-slider-handle").last().text(yearto);
               }
@@ -316,7 +315,6 @@ $('.custom-select').fancySelect();
 
         sentence += ".";
         $('#sentence').text(sentence);
-        console.log(sentence);
         getCards();
     }
 
@@ -362,8 +360,6 @@ $('.custom-select').fancySelect();
             $.extend( $parameters, {'movietype': movietype} );
         }
 
-        console.log($parameters);
-
         var marker, i;
 
         $.get( '/rest/cards', $parameters, function( data ) {
@@ -378,6 +374,7 @@ $('.custom-select').fancySelect();
             // Multiple Markers
             markers = [];
             infowindows = [];
+            hcData = [];
             
             // Browse
             $.each( data.cards, function( index, element ) {
@@ -400,6 +397,7 @@ $('.custom-select').fancySelect();
                     title: markers[i][0],
                     icon: "assets/img/zoom-0.png"
                 });
+
                 mapMarkers.push(marker);
 
                 // Allow each marker to have an info window    
@@ -417,6 +415,7 @@ $('.custom-select').fancySelect();
             }
 
              var mcOptions = {
+                   gridSize: 50, maxZoom: 15,
                    styles: [{
                        height: 40,
                        url: "assets/img/zoom-1.png",
@@ -440,9 +439,13 @@ $('.custom-select').fancySelect();
                    }]
                 }
 
-                var markerCluster = new MarkerClusterer(map, mapMarkers, mcOptions);
+                if(typeof(markerCluster) != 'undefined'){
+                    markerCluster.clearMarkers();
+                    //markerCluster.setMap(null);
+                }
+                markerCluster = new MarkerClusterer(map, mapMarkers, mcOptions);
+
                 google.maps.event.addListener(markerCluster, 'clusterclick', function(cluster) {
-                    console.log('clicked on cluster');
                     if(map.getZoom() > 12){
                         var clusterMarkers = cluster.getMarkers();
                         var clusterContent = "<ul>";
@@ -450,10 +453,8 @@ $('.custom-select').fancySelect();
                         $.each(clusterMarkers, function(){
                             m = $(this)[0];
 
-                            //console.log(infowindows);
-
+                            
                             var correctIndex = $(mapMarkers).index(this);
-                            console.log(correctIndex);
                             var content = infowindows[correctIndex];
                             clusterContent += '<li>' + content + '</li>';
 
@@ -466,6 +467,7 @@ $('.custom-select').fancySelect();
 
                 var pointArray = new google.maps.MVCArray(hcData);
 
+                if(typeof(heatmap) != 'undefined') heatmap.setMap(null);
                 heatmap = new google.maps.visualization.HeatmapLayer({
                     data: pointArray
                 });
@@ -491,10 +493,6 @@ $('.custom-select').fancySelect();
 
                 heatmap.set('gradient', gradient);
                 heatmap.set('radius', 40);
-
-
-            console.log(mapMarkers.length);
-
         });
     }
 
