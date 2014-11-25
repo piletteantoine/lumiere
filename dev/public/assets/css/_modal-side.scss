@@ -145,6 +145,37 @@
 
 }
 
+#cluster .modal-content{
+	padding: $fs*2;
+}
+
+#cluster .modal-content h2{
+	text-align: center;
+	margin-bottom: 1rem;
+	font-size: 25px;
+	line-height: 37.5px;
+	font-size: 2.3rem;
+	line-height: 3.75rem;
+	padding: .6em 2em .6em 2em;
+	position: relative;
+	width: 80%;
+	background: white;
+	text-align: center;
+	display: block;
+	color: $brand_color_tertiary!important;
+	top: 0;
+	left: 0;
+	transform: translate(0%, 0%);
+	margin: 0 auto;
+	box-shadow: rgba(0,0,0,0.2) 10px 10px 40px;
+}
+
+#cluster ul li:last-of-type a {
+	color: $brand_color_tertiary;
+}
+#cluster ul li a {
+	color: $brand_color_tertiary;
+}
 // .modal.fade:not(.in).right .modal-dialog {
 // 	-webkit-transform: translate3d(125%, 0, 0);
 // 	transform: translate3d(125%, 0, 0);

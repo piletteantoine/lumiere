@@ -471,7 +471,7 @@
                     google.maps.event.addListener(markerCluster, 'clusterclick', function(cluster) {
                         if(map.getZoom() > 12){
                             var clusterMarkers = cluster.getMarkers();
-                            var clusterContent = "<ul class='itemmultipl'>";
+                            var clusterContent = "<ul>";
                             var addressPublic = "";
                             $.each(clusterMarkers, function(){
                                 m = $(this)[0];
@@ -481,8 +481,8 @@
                                 var content = infowindows[correctIndex];
                                 clusterContent += '<li>' + content + '</li>';
 
-                                $('#slideRight .modal-body').html(clusterContent);
-                                $('#slideRight').modal();
+                                $('#cluster .modal-body').html(clusterContent);
+                                $('#cluster').modal();
                             });
                         }
                     });
