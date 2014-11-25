@@ -32,9 +32,9 @@ class RestController extends \BaseController {
         $movietype = Input::get('movietype', '');
         if( $movietype != '' && in_array($movietype, array('short', 'long'))){
             if($movietype == 'short'){
-                $cards->where('length', '<', 30);
+                $cards->where('length', '<', 45);
             } else {
-                $cards->where('length', '>', 30);
+                $cards->where('length', '>', 45);
             }
         }        
 

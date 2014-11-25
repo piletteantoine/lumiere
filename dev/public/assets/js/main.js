@@ -7,11 +7,6 @@
 
 jQuery(document).ready(function($) {
 
-console.log('========================');
-console.log('Document ready');
-// ------------------------------------------------------------
-// FancySelect
-// ------------------------------------------------------------
 
 $('.custom-select').fancySelect();
 
@@ -30,10 +25,11 @@ $('.custom-select').fancySelect();
     var latbottom = 0;
     var lngbottom = 0;
     var movietype = 0;
-    
+
     var map;
     var markers = [];
     var mapMarkers = [];
+    var cardIDs = [];
     var infowindows;
     var bounds = new google.maps.LatLngBounds();
     var mapOptions = {
@@ -145,6 +141,7 @@ $('.custom-select').fancySelect();
         $(document).on('change', '#type-selector', function(e) {
             var $this = $(this);
             movietype = $this.val();
+            console.log(movietype);
             makeSentence();
         } );
 
@@ -228,35 +225,73 @@ $('.custom-select').fancySelect();
                 $( '#geolocation_latitude_shown' ).val($( '#geolocation_new_latitude' ).val());
                 $( '#geolocation_longitude' ).val($( '#geolocation_new_longitude' ).val());
                 $( '#geolocation_longitude_shown' ).val($( '#geolocation_new_longitude' ).val());
-            })
+            });
+
+            
         }
 
+        $(document).on("change", "#single-slider", function(e){
+            var $this = $(this);
+            console.log($this.is(':checked'));
+            if($this.is(':checked')){
+                makeSingleSlider();
+            } else {
+                makeDoubleSlider();
+            }
+        });
+
         $(function() {
-            $( "#slider" ).slider({
-                  range: true,
-                  min: 1980,
-                  max: 2015,
-                  values: [ 2000, 2014 ],
-                  slide: function( event, ui ) {
-                    yearfrom = ui.values[ 0 ];
-                    yearto = ui.values[ 1 ];
-                    makeSentence();
-                    $("#slider").find(".ui-slider-handle").first().text(yearfrom);
-                    $("#slider").find(".ui-slider-handle").last().text(yearto);
-                  },
-                  create: function( event, ui ) {
-                    yearfrom = 2000;
-                    yearto = 2014;
-                    makeSentence();
-                    console.log('test');
-                    $("#slider").find(".ui-slider-handle").first().text(yearfrom);
-                    $("#slider").find(".ui-slider-handle").last().text(yearto);
-                  }
-            });
+            makeSingleSlider();
         });
     });
 
+    //$('.custom-select').fancySelect();
 
+    function makeDoubleSlider(){
+        if($( "#slider" ).children().length > 0) $( "#slider" ).slider( "destroy" );
+        $( "#slider" ).slider({
+              range: true,
+              min: 1980,
+              max: 2015,
+              values: [ 2000, 2014 ],
+              slide: function( event, ui ) {
+                yearfrom = ui.values[ 0 ];
+                yearto = ui.values[ 1 ];
+                makeSentence();
+                $("#slider").find(".ui-slider-handle").first().text(yearfrom);
+                $("#slider").find(".ui-slider-handle").last().text(yearto);
+              },
+              create: function( event, ui ) {
+                yearfrom = 2000;
+                yearto = 2014;
+                makeSentence();
+                console.log('test');
+                $("#slider").find(".ui-slider-handle").first().text(yearfrom);
+                $("#slider").find(".ui-slider-handle").last().text(yearto);
+              }
+        });
+    }
+
+    function makeSingleSlider(){
+        if($( "#slider" ).children().length > 0) $( "#slider" ).slider( "destroy" );
+        $( "#slider" ).slider({
+              min: 1980,
+              max: 2015,
+              value: 2014,
+              slide: function( event, ui ) {
+                yearfrom = ui.value;
+                yearto = ui.value;
+                makeSentence();
+                $("#slider").find(".ui-slider-handle").first().text(yearfrom);
+              },
+              create: function( event, ui ) {
+                yearfrom = ui.value;
+                yearto = ui.value;
+                makeSentence();
+                $("#slider").find(".ui-slider-handle").first().text(yearfrom);
+              }
+        });
+    }
 
     function makeSentence(){
         var sentence = "Votre recherche actuelle liste les films";
@@ -272,7 +307,10 @@ $('.custom-select').fancySelect();
             }
         }
             
-        if( typeof(category) && category > 0 ) sentence += " dans la catégorie " + category;
+        if( typeof(category) && category > 0 ) {
+            $categoryName = $('#category-selector-' + category).text();
+            sentence += " dans la catégorie " + $categoryName;
+        }
 
         sentence += ".";
         $('#sentence').text(sentence);
@@ -318,6 +356,12 @@ $('.custom-select').fancySelect();
             $.extend( $parameters, {'yearto': yearto} );
         }
 
+        if( typeof( movietype ) != 'undefined' && movietype != 0 ) {
+            $.extend( $parameters, {'movietype': movietype} );
+        }
+
+        console.log($parameters);
+
         var marker, i;
 
         $.get( '/rest/cards', $parameters, function( data ) {
@@ -335,8 +379,8 @@ $('.custom-select').fancySelect();
             
             // Browse
             $.each( data.cards, function( index, element ) {
-                
-                markers.push([element.title, element.location_lat, element.location_long])
+                markers.push([element.title, element.location_lat, element.location_long]);
+                cardIDs.push([element.id]);
                 infowindows.push( [ '<h2>' + element.title + '</h2><p>' + element.description + '</p>' ] );
             });
 
@@ -355,13 +399,14 @@ $('.custom-select').fancySelect();
                 });
                 mapMarkers.push(marker);
 
-
-                
                 // Allow each marker to have an info window    
+                var closePopup = document.querySelector(".close-map-popup");
                 google.maps.event.addListener(marker, 'click', (function(marker, i) {
                     return function() {
-                        infowindow.setContent(infowindows[i][0]);
-                        infowindow.open(map, marker);
+                        console.log(cardIDs[i]);
+                        href = "/cards/" + cardIDs[i];
+                        $('#slideRight .modal-body').load(href + ' #content');
+                        $('#slideRight').modal();
                     }
                 })(marker, i));
 
@@ -394,6 +439,9 @@ $('.custom-select').fancySelect();
                 }
 
                 var markerCluster = new MarkerClusterer(map, mapMarkers, mcOptions);
+
+            console.log(mapMarkers.length);
+
         });
     }
 

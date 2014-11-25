@@ -15,7 +15,7 @@
                 <option value="0">film</option>
             @if( ! is_null( $categories ) && ! empty( $categories ) )
                 @foreach( $categories as $category )
-                <option value="{{ $category->id }}">{{ $category->title }}</option>
+                <option id="category-selector-{{ $category->id }}" value="{{ $category->id }}">{{ $category->title }}</option>
                 @endforeach
             @endif
             </select>
@@ -31,31 +31,13 @@
 </div>
 
 <div class="dragdealer">
+    <div>
+        <input type="checkbox" name="single-slider" id="single-slider" checked="checked" />
+        <label>Sélection simple</label>
+    </div>
     <div id="slider"></div>
     <div id="sentence"></div>
 </div>
-
-<!-- <div class="wrapper">   
-    <div class="secondary-navigation">
-        <div class="filter-zone">
-            <p class="headings">Je recherche un 
-                <select class="custom-select">
-                    <option>long métrage</option>
-                    <option>court métrage</option>
-                </select>
-                de type
-                <select class="custom-select">
-                    <option>dramatique</option>
-                    <option>horreur</option>
-                    <option>romantique</option>
-                    <option>fiction</option>
-                    <option>action</option>
-                </select>
-            </p>
-        </div> --><!-- /.filter-zone -->
-        <!-- <button class="filter-validation">valider</button> -->
-<!--     </div>
-</div -->>      
 
 <div class="modal fade" id="ajax">
   <div class="modal-dialog">
