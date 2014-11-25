@@ -83,11 +83,9 @@
     <h4>Géolocalisation</h4>
     <div class="row">
         <div class="col-md-6">
-            <div class="row">
+            <div class="form-group">
                 <label for="geolocation_address">Lieu textuel</label>
-                <div class="form-group">
-                    <input type="text" class="geolocation" data-name="geolocation" name="geolocation_address" id="geolocation_address" value="{{ Input::old('location') }}">
-                </div>
+                <input type="text" class="geolocation" data-name="geolocation" name="geolocation_address" id="geolocation_address" value="{{ Input::old('location') }}">
             </div>
             <label for="geolocation_latitude">Coordonnées</label>
             <div class="row">

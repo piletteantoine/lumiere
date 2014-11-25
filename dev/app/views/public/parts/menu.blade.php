@@ -21,7 +21,7 @@
                             <span class="glyphicon glyphicon-chevron-down"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a class="ajax" href="{{ URL::route('public.cards.new') }}">@lang('menu.cards.new')</a></li>
+                            <li><a class="addCard" href="{{ URL::route('public.cards.new') }}">@lang('menu.cards.new')</a></li>
                             <li><a href="{{ URL::route('public.cards.manage') }}">@lang('menu.cards.manage')</a></li>
                         </ul>
                     </li>

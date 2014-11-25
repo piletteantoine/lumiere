@@ -12,7 +12,7 @@
     <div class="filter-zone">
         <p class="headings">Je recherche un(e) 
             <select class="custom-select" id="category-selector">
-                <option value="0">film</option>
+                <option value="0">Film</option>
             @if( ! is_null( $categories ) && ! empty( $categories ) )
                 @foreach( $categories as $category )
                 <option id="category-selector-{{ $category->id }}" value="{{ $category->id }}">{{ $category->title }}</option>

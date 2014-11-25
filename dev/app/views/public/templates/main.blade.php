@@ -30,7 +30,6 @@
   <body>
     @include('public.parts.menu')
     <div id="content">
-        <h1 class="page-header">{{ $content_title }}</h1>
         {{ $content }}
     </div>
     <div class="modal fade" id="ajax">

@@ -1,4 +1,4 @@
-<div class="wrapper" style="margin-top: 60px">
+<div class="wrapper" style="margin-top: 80px">
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -34,7 +34,7 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="pull-left">
-                <p><a href="{{ URL::route('public.cards.new') }}" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Ajouter</a></p>
+                <p><a href="{{ URL::route('public.cards.new') }}" class="ajax btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Ajouter</a></p>
             </div>
             <div class="pull-right">
                 <p>
