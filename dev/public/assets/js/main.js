@@ -93,20 +93,21 @@ $('.custom-select').fancySelect();
         $ajaxLoader = '<div class="ajax-loader"></div>';
 
         var latlng = new google.maps.LatLng( 50.833, 4.333 );
-        map = new google.maps.Map( document.getElementById( 'google-map' ), {
-            zoom: 1,
-            center: latlng,
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            panControl: 0,
-            zoomControl: true,
-            mapTypeControl: 0,
-            maxZoom: 13,
-            scaleControl: true,
-            streetViewControl: 0,
-            'styles': styles,
-            overviewMapControl: 0
-        });
-
+        if( $('#google-map').length ) {
+            map = new google.maps.Map( document.getElementById( 'google-map' ), {
+                zoom: 4,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                panControl: 0,
+                zoomControl: true,
+                mapTypeControl: 0,
+                maxZoom: 13,
+                scaleControl: true,
+                streetViewControl: 0,
+                'styles': styles,
+                overviewMapControl: 0
+            });
+        }
         $(document).on('click', '.ajax', function(e) {
             e.preventDefault();
 
@@ -168,8 +169,7 @@ $('.custom-select').fancySelect();
             getCards();
         });
 
-        //if( $('#geolocation_address').length ) {
-        {
+        if( $('#geolocation_address').length ) {
             var address   = $('#geolocation_address').val();
             var latitude  = $('#geolocation_latitude').val();
             var longitude = $('#geolocation_longitude').val();
@@ -261,15 +261,15 @@ $('.custom-select').fancySelect();
                 yearfrom = ui.values[ 0 ];
                 yearto = ui.values[ 1 ];
                 makeSentence();
-                $("#slider").find(".ui-slider-handle").first().text(yearfrom);
-                $("#slider").find(".ui-slider-handle").last().text(yearto);
+                $("#slider").find(".ui-slider-handle").first();
+                $("#slider").find(".ui-slider-handle").last();
               },
               create: function( event, ui ) {
                 yearfrom = 2000;
                 yearto = 2014;
                 makeSentence();
-                $("#slider").find(".ui-slider-handle").first().text(yearfrom);
-                $("#slider").find(".ui-slider-handle").last().text(yearto);
+                $("#slider").find(".ui-slider-handle").first();
+                $("#slider").find(".ui-slider-handle").last();
               }
         });
     }
@@ -284,13 +284,13 @@ $('.custom-select').fancySelect();
                 yearfrom = ui.value;
                 yearto = ui.value;
                 makeSentence();
-                $("#slider").find(".ui-slider-handle").first().text(yearfrom);
+                $("#slider").find(".ui-slider-handle").first();
               },
               create: function( event, ui ) {
                 yearfrom = ui.value;
                 yearto = ui.value;
                 makeSentence();
-                $("#slider").find(".ui-slider-handle").first().text(yearfrom);
+                $("#slider").find(".ui-slider-handle").first();
               }
         });
     }
@@ -408,9 +408,6 @@ $('.custom-select').fancySelect();
                         href = "/cards/" + cardIDs[i];
                         $('#slideRight .modal-body').load(href + ' #content');
                         $('#slideRight').modal();
-                        $('.modal')
-                                .prop('class', 'modal fade') // revert to default
-                            $('.modal').modal('show');
                         // $('#slideRight').removeClass('fade');
                         // $('#slideRight').toggleClass('slideRight-open')
                         
@@ -450,27 +447,28 @@ $('.custom-select').fancySelect();
                     markerCluster.clearMarkers();
                     //markerCluster.setMap(null);
                 }
-                if(typeof(MarkerClusterer) != 'undefined') markerCluster = new MarkerClusterer(map, mapMarkers, mcOptions);
+                if(typeof(MarkerClusterer) != 'undefined' && typeof(map) != 'undefined'){
+                    markerCluster = new MarkerClusterer(map, mapMarkers, mcOptions);
 
-                google.maps.event.addListener(markerCluster, 'clusterclick', function(cluster) {
-                    if(map.getZoom() > 12){
-                        var clusterMarkers = cluster.getMarkers();
-                        var clusterContent = "<ul>";
-                        var addressPublic = "";
-                        $.each(clusterMarkers, function(){
-                            m = $(this)[0];
+                    google.maps.event.addListener(markerCluster, 'clusterclick', function(cluster) {
+                        if(map.getZoom() > 12){
+                            var clusterMarkers = cluster.getMarkers();
+                            var clusterContent = "<ul>";
+                            var addressPublic = "";
+                            $.each(clusterMarkers, function(){
+                                m = $(this)[0];
 
-                            
-                            var correctIndex = $(mapMarkers).index(this);
-                            var content = infowindows[correctIndex];
-                            clusterContent += '<li>' + content + '</li>';
+                                
+                                var correctIndex = $(mapMarkers).index(this);
+                                var content = infowindows[correctIndex];
+                                clusterContent += '<li>' + content + '</li>';
 
-                            $('#slideRight .modal-body').html(clusterContent);
-                            $('#slideRight').modal();
-                        });
-                    }
-                });
-
+                                $('#slideRight .modal-body').html(clusterContent);
+                                $('#slideRight').modal();
+                            });
+                        }
+                    });
+                }
         });
     }
 
