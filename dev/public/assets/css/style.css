@@ -177,7 +177,7 @@ main {
 
 .navbar-right .dropdown .dropdown-toggle:after {
   content: '';
-  width: 8.4rem;
+  width: 7.4rem;
   height: 3.3rem;
   position: absolute;
   border: 2px solid white;

@@ -470,35 +470,6 @@ $('.custom-select').fancySelect();
                     }
                 });
 
-
-                var pointArray = new google.maps.MVCArray(hcData);
-
-                if(typeof(heatmap) != 'undefined') heatmap.setMap(null);
-                heatmap = new google.maps.visualization.HeatmapLayer({
-                    data: pointArray
-                });
-
-                heatmap.setMap(map);
-
-                var gradient = [
-                    'rgba(170, 170, 170, 0)',
-                    'rgba(175, 175, 175, 0.1)',
-                    'rgba(180, 180, 180, 0.2)',
-                    'rgba(185, 185, 185, 0.2)',
-                    'rgba(190, 190, 190, 0.3)',
-                    'rgba(195, 195, 195, 0.3)',
-                    'rgba(200, 200, 200, 0.3)',
-                    'rgba(215, 215, 215, 0.4)',
-                    'rgba(220, 220, 220, 0.5)',
-                    'rgba(225, 225, 225, 0.6)',
-                    'rgba(230, 230, 230, 0.7)',
-                    'rgba(235, 235, 235, 0.8)',
-                    'rgba(245, 245, 245, 0.9)',
-                    'rgba(255, 255, 255, 1)',
-                ];
-
-                heatmap.set('gradient', gradient);
-                heatmap.set('radius', 40);
         });
     }
 
