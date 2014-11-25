@@ -256,7 +256,7 @@
     });
 
     function handleResize() {
-    var h = $('#google-map').outerHeight();
+    var h = $(window).height();
             $('.modal-content').css({'height':h+'px'});
     }
     $(function(){

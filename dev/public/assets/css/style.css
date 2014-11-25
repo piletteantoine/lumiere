@@ -576,34 +576,85 @@ main {
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   padding: 0.7rem 1rem 0.7rem 1rem;
-  border: 2px solid #121212;
   background-color: transparent;
   display: inline-block;
   font-size: 14px;
   line-height: 21.0px;
   font-size: 1.4rem;
-  line-height: 2.1rem;
-  margin-left: 1rem; }
+  line-height: 2.1rem; }
   .filter-validation:hover {
     background-color: #ffffff;
     color: #121212 !important; }
 
+.filter-validation {
+  margin-left: 1rem;
+  border: 2px solid #121212; }
+
+.btn-primary {
+  margin-right: 4rem;
+  border: 2px solid #ffffff;
+  background-color: transparent; }
+
 .right-modal .modal-content {
   max-width: 45rem;
   position: absolute;
-  -webkit-transform: translate3d(110%, 0, 0);
-  transform: translate3d(110%, 0, 0); }
+  top: 0;
+  right: 0;
+  margin: 0; }
 
 .right-modal h1 {
   font: 0/0 a;
   display: none; }
 
-.modal.fade:not(.in).right .modal-dialog {
-  -webkit-transform: translate3d(125%, 0, 0);
-  transform: translate3d(125%, 0, 0); }
+.right-modal h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 25px;
+  line-height: 37.5px;
+  font-size: 2.5rem;
+  line-height: 3.75rem;
+  padding: .6em 2em .6em 2em;
+  position: absolute;
+  width: 80%;
+  background: white;
+  text-align: center;
+  display: block;
+  top: 27.5rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: rgba(0, 0, 0, 0.1) 10px 10px 40px; }
+
+.right-modal h4 {
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 24px;
+  font-size: 1.2rem;
+  line-height: 2.4rem; }
+
+.right-modal p {
+  margin-top: 4rem; }
+
+.row p {
+  margin: 0; }
+
+.row {
+  margin-right: 0;
+  margin-left: 0; }
+
+.col-md-12 {
+  padding-left: 0;
+  padding-right: 0; }
+
+.text-left strong {
+  font-size: 17px;
+  line-height: 25.5px;
+  font-size: 1.7rem;
+  line-height: 2.55rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid #ffffff; }
 
 .modal-content {
-  background: #f6f6f6;
+  background: #656565;
   border-radius: 1px; }
 
 .form-group {
@@ -616,7 +667,7 @@ main {
   border: none; }
 
 .form-group label {
-  color: #121212;
+  color: #ffffff;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px; }
@@ -630,17 +681,19 @@ main {
   font-size: 2.5rem;
   line-height: 3.75rem; }
 
-.modal-body p {
-  color: #121212;
+.modal-body p:first-of-type {
+  color: #ffffff;
   font-size: 14px;
-  line-height: 21px;
+  line-height: 23px;
   font-size: 1.4rem;
-  line-height: 2.1rem; }
+  line-height: 2.3rem;
+  padding: 1rem 0 2rem 0; }
 
 .modal-body #content {
   padding: 1.5rem; }
   .modal-body #content img {
-    max-width: 100%; }
+    max-width: 100%;
+    min-height: 250px; }
 
 .page-header {
   font: 0/0 a;

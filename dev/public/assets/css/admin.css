@@ -14,11 +14,11 @@ thead th{
 	border: 1px solid #333;
 }
 
-.btn-primary {
+/*.btn-primary {
 	color: #FFF;
 	background-color: #333;
 	border-color: #000;
-}
+}*/
 	.btn-primary:hover, .btn-primary:active{
 		background: #444;
 		border-color: #000;

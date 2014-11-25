@@ -1,5 +1,5 @@
 .modal-content{
-	background: $light-grey;
+	background: $dark_grey;
 	border-radius: 1px;
 }
 
@@ -15,7 +15,7 @@ border-bottom: 1px solid white;
 }
 
 .form-group label{
-	color: $black;;
+	color: $white;;
 	font-size: $fs;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -28,14 +28,16 @@ border-bottom: 1px solid white;
 	@include fontsize(2.5);
 }
 
-.modal-body p{
-	color: $black;;
-	@include fontsize(1.4, 2.1);
+.modal-body p:first-of-type{
+	color: $white;;
+	@include fontsize(1.4, 2.3);
+	padding: $fs*1 0 $fs*2 0;
 }
 
 .modal-body #content{
 	padding: $fs*1.5;
 	img{
 		max-width: 100%;
+		min-height: 250px;
 	}
 }

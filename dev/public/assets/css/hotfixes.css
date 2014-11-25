@@ -7,14 +7,14 @@ input[type="file"]{
 	height: 33px;	
 }
 
-.btn {
+/*.btn {
 	border: 2px solid #000;
 }
 .btn-primary {
 	color: #FFF;
 	background-color: #333;
 	border-color: #000;
-}
+}*/
 	.btn-primary:hover, .btn-primary:active, .btn-primary:focus{
 		background: #444;
 		border-color: #000;
@@ -23,8 +23,8 @@ input[type="file"]{
 .modal-body h4{
 	font-family: RealText-Regular, helvetica, arial, sans-serif;
 	display: block;
-	font-size: 25px;
-	line-height: 1.2;
+/*	font-size: 25px;
+	line-height: 1.2;*/
 	color: #fff;
 }
 
