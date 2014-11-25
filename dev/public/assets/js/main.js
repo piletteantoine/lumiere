@@ -471,7 +471,7 @@
                     google.maps.event.addListener(markerCluster, 'clusterclick', function(cluster) {
                         if(map.getZoom() > 12){
                             var clusterMarkers = cluster.getMarkers();
-                            var clusterContent = "<ul>";
+                            var clusterContent = "<ul class='itemmultipl'>";
                             var addressPublic = "";
                             $.each(clusterMarkers, function(){
                                 m = $(this)[0];
