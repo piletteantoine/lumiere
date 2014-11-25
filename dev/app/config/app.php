@@ -4,7 +4,7 @@ return array(
 	'debug' => true,
 	'url' => 'http://www.lumiere.local',
 	'timezone' => 'UTC',
-	'locale' => 'en',
+	'locale' => 'fr',
 	'fallback_locale' => 'en',
 
 	'key' => 'rgrSVQvXvQwOoTFxyhFRluz1W92CzyQe',
