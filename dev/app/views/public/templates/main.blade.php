@@ -33,5 +33,33 @@
         <h1 class="page-header">{{ $content_title }}</h1>
         {{ $content }}
     </div>
+    <div class="modal fade" id="ajax">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade right-modal" id="slideRight">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="addCard">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            @include('public.cards.create')
+        </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
