@@ -1,6 +1,5 @@
 .modal-content{
-	background: black;
-	border: 2px solid white;
+	background: $white;
 	border-radius: 1px;
 }
 
@@ -16,22 +15,22 @@ border-bottom: 1px solid white;
 }
 
 .form-group label{
-	color: $white;
+	color: $black;;
 	font-size: $fs;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 }
 
 .modal-body h2{
-	color: $white;
+	color: $black;
 	text-align: center;
 	margin-bottom: $fs;
 	@include fontsize(2.5);
 }
 
 .modal-body p{
-	color: $white;
-	@include fontsize(1.8, 2.4);
+	color: $black;;
+	@include fontsize(1.4, 2.1);
 }
 
 .modal-body #content{

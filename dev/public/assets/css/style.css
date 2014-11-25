@@ -218,7 +218,7 @@ main {
   position: absolute;
   left: 50%;
   min-width: 70%;
-  top: 12rem;
+  top: 3rem;
   background-color: #ffffff;
   transform: translate(-50%, -50%);
   padding: 2.3rem 3rem 1.7rem 3rem;
@@ -585,13 +585,22 @@ main {
     background-color: #ffffff;
     color: #121212 !important; }
 
+.right-modal .modal-content {
+  max-width: 45rem;
+  position: absolute;
+  -webkit-transform: translate3d(110%, 0, 0);
+  transform: translate3d(110%, 0, 0); }
+
+.right-modal h1 {
+  font: 0/0 a;
+  display: none; }
+
 .modal.fade:not(.in).right .modal-dialog {
   -webkit-transform: translate3d(125%, 0, 0);
   transform: translate3d(125%, 0, 0); }
 
 .modal-content {
-  background: black;
-  border: 2px solid white;
+  background: #ffffff;
   border-radius: 1px; }
 
 .form-group {
@@ -604,13 +613,13 @@ main {
   border: none; }
 
 .form-group label {
-  color: #ffffff;
+  color: #121212;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px; }
 
 .modal-body h2 {
-  color: #ffffff;
+  color: #121212;
   text-align: center;
   margin-bottom: 1rem;
   font-size: 25px;
@@ -619,11 +628,11 @@ main {
   line-height: 3.75rem; }
 
 .modal-body p {
-  color: #ffffff;
-  font-size: 18px;
-  line-height: 24px;
-  font-size: 1.8rem;
-  line-height: 2.4rem; }
+  color: #121212;
+  font-size: 14px;
+  line-height: 21px;
+  font-size: 1.4rem;
+  line-height: 2.1rem; }
 
 .modal-body #content {
   padding: 1.5rem; }
