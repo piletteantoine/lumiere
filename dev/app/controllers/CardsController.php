@@ -122,7 +122,6 @@ class CardsController extends BaseController {
         $this->layout->content->card = $card;
         $this->layout->content->categories = $categories;
         $this->layout->content->category = $category;
-        $this->layout->sidebar = View::make('public.cards.sidebars.edit')->with('card', $card);
     }
 
     public function postUpdate($id) {

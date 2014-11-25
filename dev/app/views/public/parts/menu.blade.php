@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                 <a class="logotype" href="{{ URL::route('home') }}"><img src="{{ asset('assets/img/lumiere-logo.png') }}" alt="" height="40px"></a>
+                <a class="logotype" href="{{ URL::route('home') }}"><img src="{{ asset('assets/img/lumiere-logo.png') }}" alt="" height="40px"></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -21,7 +21,7 @@
                             <span class="glyphicon glyphicon-chevron-down"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ URL::route('public.cards.new') }}">@lang('menu.cards.new')</a></li>
+                            <li><a class="ajax" href="{{ URL::route('public.cards.new') }}">@lang('menu.cards.new')</a></li>
                             <li><a href="{{ URL::route('public.cards.manage') }}">@lang('menu.cards.manage')</a></li>
                         </ul>
                     </li>
@@ -41,6 +41,11 @@
                     @endif
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+                    @if( Auth::user()->role()->first()->name_tag == 'Administrator' )
+                    <li>
+                        <a href="{{ URL::route('admin.home') }}">@lang('menu.administration')</a>
+                    </li>
+                    @endif
                     @if( Auth::check() )
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -63,6 +68,11 @@
                                             <p class="text-left">
                                                 <a class="ajax" href="{{ URL::route('profile') }}" class="btn btn-primary btn-block btn-sm">@lang('menu.edit_profile')</a>
                                             </p>
+                                            @if( Auth::user()->role()->first()->name_tag == 'Administrator' )
+                                            <p class="text-left">
+                                                <a href="{{ URL::route('admin.home') }}">@lang('menu.administration')</a>
+                                            </p>
+                                            @endif
                                         </div>
                                     </div>
                                 </li>
@@ -74,11 +84,6 @@
                                                 <p>
                                                     <a href="{{ URL::route('logout') }}" class="btn btn-danger btn-block">@lang('menu.logout')</a>
                                                 </p>
-                                                @if( Auth::user()->role()->first()->name_tag == 'admin' )
-                                                <p>
-                                                    <a href="{{ URL::route('admin.home') }}" class="btn btn-info btn-block">@lang('menu.administration')</a>
-                                                </p>
-                                                @endif
                                             </div>
                                         </div>
                                     </div>

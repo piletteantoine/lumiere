@@ -69,7 +69,7 @@ class PagesController extends BaseController {
         		array(
 					'title'        => Input::get('title'),
 					'content'      => $input_content,
-					'excerpt'      => $excerpt,
+					'excerpt'      => $input_excerpt,
 					'published_on' => $published_on,
 					'author_id'    => Auth::user()->id
         		)

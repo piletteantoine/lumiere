@@ -1,3 +1,4 @@
+<h2 class="page-title">Édition d'une fiche</h2>
 @if( 'create_card' == Input::old('action', '') && Session::has( 'message' ) )
 <div class="alert alert-{{ $errors->has() ? 'danger' : 'success' }} alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Fermer</span></button>
@@ -6,7 +7,6 @@
 @endif
 
 <form action="{{ URL::route('admin.cards.update', ['id' => $card->id]) }}" method="post"  enctype="multipart/form-data">
-    <h4>Édition d'une fiche</h4>
     <div class="row">
         <div class="col-md-12">
             <div class="form-group {{ 'create_card' == Input::old('action', '') && $errors->has('title') ? 'has-error has-feedback' : '' }}">

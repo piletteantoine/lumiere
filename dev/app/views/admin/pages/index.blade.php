@@ -34,7 +34,7 @@
     </div>
 </div>
 
-<table id="pages" class="table table-striped table-hover table-bordered">
+<table id="pages" class="table table-bordered">
     <thead>
         <tr>
             <th>Titre</th>
@@ -47,14 +47,14 @@
     @if( count( $pages ) > 0 )
         @foreach( $pages as $index => $page )
         <tr id="page-{{ $page->id }}">
-            <td>{{ $page->title }}</td>
+            <td style="width: 200px">{{ $page->title }}</td>
             <td>{{ $page->excerpt }}</td>
-            <td>{{ date('d/m/Y H:i', max(strtotime($page->published_on), 0)) }}</td>
-            <td>
+            <td style="width: 100px">{{ date('d/m/Y H:i', max(strtotime($page->published_on), 0)) }}</td>
+            <td style="width: 200px">
                 <form action="{{ URL::route('admin.pages.delete', [$page->id]) }}" method="post">
-                    <div class="btn-group btn-group-block">
-                        <a href="{{ URL::route('admin.pages.edit', [$page->id]) }}" class="btn btn-primary btn-sm btn-col-4"><i class="glyphicon glyphicon-edit"></i> <span class="hidden-xs">Modifier</span></a>
-                        <button class="btn btn-danger btn-sm btn-col-4"><i class="glyphicon glyphicon-trash"></i> <span class="hidden-xs">Supprimer</span></button>
+                    <div class="btn-group">
+                        <a href="{{ URL::route('admin.pages.edit', [$page->id]) }}" class="btn btn-primary"><i class="glyphicon glyphicon-edit"></i>Modifier</a>
+                        <button class="btn btn-danger" style="width: auto"><i class="glyphicon glyphicon-trash"></i> Supprimer</button>
                     </div>
                 </form>
             </td>

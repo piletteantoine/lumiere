@@ -1,0 +1,95 @@
+.col-xs-12{
+	margin-bottom: 20px;
+}
+
+input[type="file"]{
+	width: 160px;
+	height: 33px;	
+}
+
+.btn {
+	border: 2px solid #000;
+}
+.btn-primary {
+	color: #FFF;
+	background-color: #333;
+	border-color: #000;
+}
+	.btn-primary:hover, .btn-primary:active{
+		background: #444;
+		border-color: #000;
+	}
+
+.modal-body h4{
+	font-family: RealText-Regular, helvetica, arial, sans-serif;
+	display: block;
+	font-size: 25px;
+	line-height: 1.2;
+	color: #fff;
+}
+
+table{
+	color: #fff;
+	font-size: 13px;
+}
+thead th{
+	background: #333;
+}
+
+.table-bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td {
+	border: 1px solid #333;
+}
+
+.page-header{
+	font-family: RealText-Regular, helvetica, arial, sans-serif;
+	display: block;
+	font-size: 25px;
+	line-height: 1.2;
+	color: #fff;
+}
+
+.input-group input{
+	background-color: #000;
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid #fff;
+	height: 32px;
+}
+
+.dataTables_length, .dataTables_info{
+	display: none;
+}
+
+.paginate_button {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid rgba(0, 0, 0, 0);
+	background: #333;
+	color: #fff;
+}
+	.paginate_button.current{
+		background: #fff;
+		color: #333;
+	}
+
+.dataTables_paginate span span{
+	display: inline-block;
+	padding: 6px 12px;
+}
+
+.dataTables_paginate{
+	padding-bottom: 40px
+}

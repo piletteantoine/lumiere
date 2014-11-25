@@ -93,20 +93,21 @@ $('.custom-select').fancySelect();
         $ajaxLoader = '<div class="ajax-loader"></div>';
 
         var latlng = new google.maps.LatLng( 50.833, 4.333 );
-        map = new google.maps.Map( document.getElementById( 'google-map' ), {
-            zoom: 4,
-            center: latlng,
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            panControl: 0,
-            zoomControl: true,
-            mapTypeControl: 0,
-            maxZoom: 13,
-            scaleControl: true,
-            streetViewControl: 0,
-            'styles': styles,
-            overviewMapControl: 0
-        });
-
+        if( $('#google-map').length ) {
+            map = new google.maps.Map( document.getElementById( 'google-map' ), {
+                zoom: 4,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                panControl: 0,
+                zoomControl: true,
+                mapTypeControl: 0,
+                maxZoom: 13,
+                scaleControl: true,
+                streetViewControl: 0,
+                'styles': styles,
+                overviewMapControl: 0
+            });
+        }
         $(document).on('click', '.ajax', function(e) {
             e.preventDefault();
 
@@ -407,9 +408,6 @@ $('.custom-select').fancySelect();
                         href = "/cards/" + cardIDs[i];
                         $('#slideRight .modal-body').load(href + ' #content');
                         $('#slideRight').modal();
-                        $('.modal')
-                                .prop('class', 'modal fade') // revert to default
-                            $('.modal').modal('show');
                         // $('#slideRight').removeClass('fade');
                         // $('#slideRight').toggleClass('slideRight-open')
                         
@@ -417,7 +415,7 @@ $('.custom-select').fancySelect();
                 })(marker, i));
 
                 // Automatically center the map fitting all markers on the screen
-                map.fitBounds(bounds);
+                if(typeof(map) != 'undefined') map.fitBounds(bounds);
             }
 
              var mcOptions = {
@@ -449,27 +447,28 @@ $('.custom-select').fancySelect();
                     markerCluster.clearMarkers();
                     //markerCluster.setMap(null);
                 }
-                markerCluster = new MarkerClusterer(map, mapMarkers, mcOptions);
+                if(typeof(MarkerClusterer) != 'undefined' && typeof(map) != 'undefined'){
+                    markerCluster = new MarkerClusterer(map, mapMarkers, mcOptions);
 
-                google.maps.event.addListener(markerCluster, 'clusterclick', function(cluster) {
-                    if(map.getZoom() > 12){
-                        var clusterMarkers = cluster.getMarkers();
-                        var clusterContent = "<ul>";
-                        var addressPublic = "";
-                        $.each(clusterMarkers, function(){
-                            m = $(this)[0];
+                    google.maps.event.addListener(markerCluster, 'clusterclick', function(cluster) {
+                        if(map.getZoom() > 12){
+                            var clusterMarkers = cluster.getMarkers();
+                            var clusterContent = "<ul>";
+                            var addressPublic = "";
+                            $.each(clusterMarkers, function(){
+                                m = $(this)[0];
 
-                            
-                            var correctIndex = $(mapMarkers).index(this);
-                            var content = infowindows[correctIndex];
-                            clusterContent += '<li>' + content + '</li>';
+                                
+                                var correctIndex = $(mapMarkers).index(this);
+                                var content = infowindows[correctIndex];
+                                clusterContent += '<li>' + content + '</li>';
 
-                            $('#slideRight .modal-body').html(clusterContent);
-                            $('#slideRight').modal();
-                        });
-                    }
-                });
-
+                                $('#slideRight .modal-body').html(clusterContent);
+                                $('#slideRight').modal();
+                            });
+                        }
+                    });
+                }
         });
     }
 
