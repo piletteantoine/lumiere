@@ -50,6 +50,15 @@
       </div>
     </div>
 
+    <div class="modal fade right-modal" id="multipleDestinations">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="modal fade" id="addCard">
       <div class="modal-dialog">
         <div class="modal-content">

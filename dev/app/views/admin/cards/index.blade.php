@@ -68,7 +68,7 @@
                 <form action="{{ URL::route('admin.cards.delete', [$card->id]) }}" method="post">
                     <div class="btn-group btn-group-justified">
                         <div class="btn-group">
-                            <a href="{{ URL::route('admin.cards.edit', [ 'id' => $card->id ]) }}" class="btn btn-primary"><i class="glyphicon glyphicon-edit"></i> Modifier</a>
+                            <a href="{{ URL::route('admin.cards.edit', [ 'id' => $card->id ]) }}" class="ajax btn btn-primary"><i class="glyphicon glyphicon-edit"></i> Modifier</a>
                         </div>
                         <div class="btn-group">
                             <button class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i> Supprimer</button>

@@ -481,8 +481,8 @@
                                 var content = infowindows[correctIndex];
                                 clusterContent += '<li>' + content + '</li>';
 
-                                $('#slideRight .modal-body').html(clusterContent);
-                                $('#slideRight').modal();
+                                $('#multipleDestinations .modal-body').html(clusterContent);
+                                $('#multipleDestinations').modal();
                             });
                         }
                     });
