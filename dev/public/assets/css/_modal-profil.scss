@@ -1,0 +1,39 @@
+.modal-content{
+	background: black;
+	border: 2px solid white;
+	border-radius: 1px;
+}
+
+.form-group {
+margin-bottom: $fs*1.5;
+border-bottom: 1px solid white;
+}
+
+.form-group input,
+.form-group textarea,{
+	background-color: $dark-black;
+	border: none;
+}
+
+.from-group label[for="first_name"]{
+	color: $white;
+}
+
+.modal-body h2{
+	color: $white;
+	text-align: center;
+	margin-bottom: $fs;
+	@include fontsize(2.5);
+}
+
+.modal-body p{
+	color: $white;
+	@include fontsize(1.8, 2.4);
+}
+
+.modal-body #content{
+	padding: $fs*1.5;
+	img{
+		max-width: 100%;
+	}
+}

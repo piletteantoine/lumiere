@@ -62,7 +62,6 @@
     <div class="modal-content">
       <div class="modal-body">
         @include('public.cards.create')
-    </form>
       </div>
     </div>
   </div>
