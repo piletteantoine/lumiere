@@ -10,7 +10,7 @@
 	z-index: $z-map-ui;
 	-webkit-box-shadow: 0 0 30px 0 rgba(19, 19, 19, .2);
 	box-shadow: 0 0 30px 0 rgba(19, 19, 19, .2);
-	padding: 20px;
+	padding: 0 2em 0 2em;
 	cursor: ew-resize;
 	transform: translateX(-50%);
 }
@@ -64,7 +64,7 @@
 	text-transform: uppercase;
 	// @extend %fs-small;
 	// @extend %circular-bold;
-	padding: 7px 10px;
+	padding: $fs*.7 $fs;
 	text-align: center;
 	margin-left: 5px; // Compensate for the handle width (5px left border + 5px right border)
 	-webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, .2);
@@ -73,6 +73,30 @@
 
 #sentence{
 	color: $white;
+	font-size: $fs*1.2;
+	text-align: center;
+	margin-top: $fs*.5;
+	margin-bottom: $fs*.5;
+}
+
+.ui-slider-handle{
+	border: 3px solid #d3d3d3;
+	background: $black;
+	font-weight: normal;
+	outline: none;
+	color: white;
+}
+
+.ui-slider-horizontal .ui-slider-handle{
+	top: -.4em;
+}
+
+.ui-corner-all{
+	border-radius: $fs*2.5;
+}
+
+.ui-widget-content{
+	height: 4px;
 }
 
 
