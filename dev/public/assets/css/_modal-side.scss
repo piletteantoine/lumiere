@@ -152,10 +152,10 @@
 #cluster .modal-content h2{
 	text-align: center;
 	margin-bottom: 1rem;
-	font-size: 25px;
-	line-height: 37.5px;
-	font-size: 2.3rem;
-	line-height: 3.75rem;
+	font-size: 18px;
+	line-height: 27px;
+	font-size: 1.8rem;
+	line-height: 2.7rem;
 	padding: .6em 2em .6em 2em;
 	position: relative;
 	width: 80%;
@@ -170,11 +170,22 @@
 	box-shadow: rgba(0,0,0,0.2) 10px 10px 40px;
 }
 
+
 #cluster ul li:last-of-type a {
 	color: $brand_color_tertiary;
 }
 #cluster ul li a {
 	color: $brand_color_tertiary;
+}
+
+#cluster p {
+	@include fontsize(1.4, 2.2);
+	margin-top: $fs*3;
+}
+
+#cluster .modal-content,
+#cluster .modal-dialog{
+	height: 100%;
 }
 // .modal.fade:not(.in).right .modal-dialog {
 // 	-webkit-transform: translate3d(125%, 0, 0);
