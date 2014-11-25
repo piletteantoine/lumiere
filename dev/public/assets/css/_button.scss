@@ -6,7 +6,8 @@
 	color: black;
 	background-color: $white;
 	border: solid 2px black;
-	width: 40%;
+	width: 50%;
+	@include fontsize(1.2);
 	&:hover{
 		@include transition(all, .6s, ease);
 		background-color: black;
